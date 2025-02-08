@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Zehui Yin">
+<meta name="dcterms.date" content="2025-02-08">
+<meta name="description" content="This shiny app simulates 1,000 runs to determine the probability of successfully collecting the final reward when opening loot boxes in games.">
 
-<title>Data Visualization  – Zehui Yin's Personal Websites</title>
+<title>Loot Box Opening Simulation – Zehui Yin’s Personal Websites</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,31 +26,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-53c3e1fa1a1e870559c27668da30ec4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-fb2d9f1bd06af04f240f8aea3837da3a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-53c3e1fa1a1e870559c27668da30ec4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-fb2d9f1bd06af04f240f8aea3837da3a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,35 +76,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RG5B7DX32S"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -170,47 +142,20 @@ if (localStorage.getItem("not_first_load") === null) {
 }
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Zehui Yin's Personal Websites" href="data_visualization.xml" data-external="1"><meta property="og:title" content="Data Visualization  – Zehui Yin’s Personal Websites">
-<meta property="og:image" content="https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/thumbnail.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Loot Box Opening Simulation – Zehui Yin’s Personal Websites">
+<meta property="og:description" content="This shiny app simulates 1,000 runs to determine the probability of successfully collecting the final reward when opening loot boxes in games.">
+<meta property="og:image" content="https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/thumbnail.png">
 <meta property="og:site_name" content="Zehui Yin's Personal Websites">
-<meta property="og:image:height" content="759">
-<meta property="og:image:width" content="942">
-<meta name="twitter:title" content="Data Visualization  – Zehui Yin’s Personal Websites">
-<meta name="twitter:image" content="https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/thumbnail.png">
+<meta property="og:image:height" content="409">
+<meta property="og:image:width" content="945">
+<meta name="twitter:title" content="Loot Box Opening Simulation – Zehui Yin’s Personal Websites">
+<meta name="twitter:description" content="This shiny app simulates 1,000 runs to determine the probability of successfully collecting the final reward when opening loot boxes in games.">
+<meta name="twitter:image" content="https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/thumbnail.png">
 <meta name="twitter:site" content="@zehuiyin">
-<meta name="twitter:image-height" content="759">
-<meta name="twitter:image-width" content="942">
+<meta name="twitter:image-height" content="409">
+<meta name="twitter:image-width" content="945">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -221,7 +166,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><strong>Zehui Yin</strong> | 殷泽辉</span>
     </a>
   </div>
@@ -286,7 +231,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Data Visualization <a href="./data_visualization.xml"><i class="fa-solid fa-rss" aria-label="rss"></i></a></h1>
+          <h1 class="quarto-secondary-nav-title">Loot Box Opening Simulation</h1>
         </a>     
     </div>
   </nav>
@@ -308,13 +253,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About Me</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CV.html" class="sidebar-item-text sidebar-link">
+  <a href="../../CV.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Curriculum Vitae</span></a>
   </div>
 </li>
@@ -331,13 +276,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../data_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_visualization.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../data_visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Visualization</span></a>
   </div>
 </li>
@@ -345,13 +290,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./teaching.html" class="sidebar-item-text sidebar-link">
+  <a href="../../teaching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Teaching</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./research.html" class="sidebar-item-text sidebar-link">
+  <a href="../../research.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Research</span></a>
   </div>
 </li>
@@ -360,22 +305,43 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="QmlrZXNoYXJl">Bikeshare <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Q2VudHJhbCUyMExpbWl0JTIwVGhlb3JlbQ==">Central Limit Theorem <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGFzaGJvYXJk">Dashboard <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGlnaXRhbCUyMHR3aW4=">Digital twin <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2FpbmVzdmlsbGU=">Gainesville <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SGFtaWx0b24=">Hamilton <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TmFuamluZw==">Nanjing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHVibGljJTIwdHJhbnNpdA==">Public transit <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UmVhbCUyMHRpbWU=">Real time <span class="quarto-category-count">(4)</span></div><div class="category" data-category="U2hpbnk=">Shiny <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U2ltdWxhdGlvbg==">Simulation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3BhdGlhbCUyMGFuYWx5c2lz">Spatial analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RhdGljJTIwbWFw">Static map <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VG9yb250bw==">Toronto <span class="quarto-category-count">(3)</span></div><div class="category" data-category="V2ViJTIwbWFw">Web map <span class="quarto-category-count">(7)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Data Visualization <a href="./data_visualization.xml"><i class="fa-solid fa-rss" aria-label="rss"></i></a></h1>
-</div>
+<h1 class="title d-none d-lg-block">Loot Box Opening Simulation</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Simulation</div>
+    <div class="quarto-category">Shiny</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    This shiny app simulates 1,000 runs to determine the probability of successfully collecting the final reward when opening loot boxes in games.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Zehui Yin </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 8, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -385,432 +351,19 @@ window.Quarto = {
 </header>
 
 
+<p>This Shiny app is built using Shinylive, which allows it to run entirely on the frontend without the need for a server. However, this also means that it may take some time to load in the web browser.</p>
+<style>.embed-container {position: relative; padding-bottom: 45%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Location_Map" src="https://zehuiyin.github.io/lootbox_simulation/">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>To access the web app in full screen, please click on this <a href="https://zehuiyin.github.io/lootbox_simulation/">link</a>.</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="U3RhdGljJTIwbWFw" data-listing-date-sort="1730606400000" data-listing-file-modified-sort="1730615227047" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="319">
-<div class="thumbnail">
-<p><a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external"></a></p><a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2024-11-03-Tissot-Circles/mercator.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external">Tissot Circles in Different Coordinate Reference Systems</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGljJTIwbWFw'); return false;">
-Static map
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external">A coordinate reference system is a crucial component for geographical data. It governs how spatial features are placed and aligned on the map. Tissot circles are an excellent way to demonstrate distortion in different coordinate reference systems.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2024-11-03-Tissot-Circles/index.html" class="no-external">
-<div class="listing-date">
-Nov 3, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="SGFtaWx0b24lMkNQdWJsaWMlMjB0cmFuc2l0JTJDUmVhbCUyMHRpbWUlMkNXZWIlMjBtYXAlMkNTaGlueQ==" data-listing-date-sort="1728446400000" data-listing-file-modified-sort="1728510483491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="44">
-<div class="thumbnail">
-<p><a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external"></a></p><a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2024-10-09-HSR-Realtime-Location/HSR_realtime.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external">Hamilton Street Railway Real Time Web Map</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('SGFtaWx0b24='); return false;">
-Hamilton
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UHVibGljJTIwdHJhbnNpdA=='); return false;">
-Public transit
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UmVhbCUyMHRpbWU='); return false;">
-Real time
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U2hpbnk='); return false;">
-Shiny
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external">This Shiny app provides real-time locations of Hamilton Street Railway transit vehicles. Sourced from Hamilton’s open data using GTFS real-time feeds, the vehicle locations…<em></em></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2024-10-09-HSR-Realtime-Location/index.html" class="no-external">
-<div class="listing-date">
-Oct 9, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="V2ViJTIwbWFwJTJDSGFtaWx0b24=" data-listing-date-sort="1728273600000" data-listing-file-modified-sort="1728342162874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
-<div class="thumbnail">
-<p><a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external"></a></p><a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2024-10-07-Hamilton-Demographics/hamilton_demo.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external">Hamilton Demographic Maps</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('SGFtaWx0b24='); return false;">
-Hamilton
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external">This series of web maps illustrates Hamilton’s demographics, sourced from the 2021 Canadian Census by Statistics Canada.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2024-10-07-Hamilton-Demographics/index.html" class="no-external">
-<div class="listing-date">
-Oct 7, 2024
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="RGFzaGJvYXJk" data-listing-date-sort="1700197200000" data-listing-file-modified-sort="1727724914091" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
-<div class="thumbnail">
-<p><a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external"></a></p><a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2023-11-17-Earthquake-Dashboard/dashboard.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external">Earthquake Dashboard</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RGFzaGJvYXJk'); return false;">
-Dashboard
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external">This dashboard visualizes the location and magnitude of all the earthquakes that occurred in the past week. The data is sourced from the USGS, which provides real-time GeoJSON feeds of seismic events around the world.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2023-11-17-Earthquake-Dashboard/index.html" class="no-external">
-<div class="listing-date">
-Nov 17, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Q2VudHJhbCUyMExpbWl0JTIwVGhlb3JlbSUyQ1NpbXVsYXRpb24lMkNTaGlueQ==" data-listing-date-sort="1700024400000" data-listing-file-modified-sort="1739047664584" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="204">
-<div class="thumbnail">
-<p><a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external"></a></p><a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external">Central Limit Theorem Demonstration</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Q2VudHJhbCUyMExpbWl0JTIwVGhlb3JlbQ=='); return false;">
-Central Limit Theorem
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U2ltdWxhdGlvbg=='); return false;">
-Simulation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U2hpbnk='); return false;">
-Shiny
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external">Central Limit Theorem demonstration based on simulation: a pure frontend Shiny app using Shinylive.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html" class="no-external">
-<div class="listing-date">
-Nov 15, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="VG9yb250byUyQ0Jpa2VzaGFyZSUyQ1JlYWwlMjB0aW1lJTJDV2ViJTIwbWFw" data-listing-date-sort="1691294400000" data-listing-file-modified-sort="1727724914081" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126">
-<div class="thumbnail">
-<p><a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external"></a></p><a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external">Toronto Bikeshare Station Info Web Map</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('VG9yb250bw=='); return false;">
-Toronto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmlrZXNoYXJl'); return false;">
-Bikeshare
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UmVhbCUyMHRpbWU='); return false;">
-Real time
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external">This web map shows the latest information about the bikeshare Toronto stations, such as their address and capacity.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html" class="no-external">
-<div class="listing-date">
-Aug 6, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="VG9yb250byUyQ1B1YmxpYyUyMHRyYW5zaXQlMkNSZWFsJTIwdGltZSUyQ1dlYiUyMG1hcA==" data-listing-date-sort="1688097600000" data-listing-file-modified-sort="1727724914076" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="110">
-<div class="thumbnail">
-<p><a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external"></a></p><a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external">Toronto Transit Commission Real Time Web Map</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('VG9yb250bw=='); return false;">
-Toronto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UHVibGljJTIwdHJhbnNpdA=='); return false;">
-Public transit
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UmVhbCUyMHRpbWU='); return false;">
-Real time
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external">This web map displays the real-time location, direction and speed of each Toronto Transit Commission (TTC) vehicle. The map updates every minute at most.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html" class="no-external">
-<div class="listing-date">
-Jun 30, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="VG9yb250byUyQ0Jpa2VzaGFyZSUyQ1NwYXRpYWwlMjBhbmFseXNpcyUyQ1dlYiUyMG1hcA==" data-listing-date-sort="1687752000000" data-listing-file-modified-sort="1727724914072" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="260">
-<div class="thumbnail">
-<p><a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external"></a></p><a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external">Toronto Bike Share Web Map</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('VG9yb250bw=='); return false;">
-Toronto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QmlrZXNoYXJl'); return false;">
-Bikeshare
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U3BhdGlhbCUyMGFuYWx5c2lz'); return false;">
-Spatial analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external">This web map shows the results of two spatial analysis projects on Bike Share Toronto stations and routes</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html" class="no-external">
-<div class="listing-date">
-Jun 26, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="RGlnaXRhbCUyMHR3aW4lMkNSZWFsJTIwdGltZSUyQ1dlYiUyMG1hcCUyQ0dhaW5lc3ZpbGxl" data-listing-date-sort="1655870400000" data-listing-file-modified-sort="1727724914071" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1013">
-<div class="thumbnail">
-<p><a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external"></a></p><a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external">
-<p class="card-img-top"><img src="images\digital_twins.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external">Digital Twin with Real-time Transit Data: UF Campus with RTS</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RGlnaXRhbCUyMHR3aW4='); return false;">
-Digital twin
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('UmVhbCUyMHRpbWU='); return false;">
-Real time
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R2FpbmVzdmlsbGU='); return false;">
-Gainesville
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external">This project creates an ArcGIS Online web app with a 3D map which focuses on the UF campus. The 3D map contains the 3D models of the buildings on the UF campus, city roads…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html" class="no-external">
-<div class="listing-date">
-Jun 22, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="TmFuamluZyUyQ1dlYiUyMG1hcA==" data-listing-date-sort="1618891200000" data-listing-file-modified-sort="1727724914055" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="187">
-<div class="thumbnail">
-<p><a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external"></a></p><a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external">
-<p><img loading="lazy" src="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/thumbnail.png" class="thumbnail-image"></p>
-</a><p><a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external">Map of Nanjing Tourist Attractions and Ticket Prices</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TmFuamluZw=='); return false;">
-Nanjing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('V2ViJTIwbWFw'); return false;">
-Web map
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external">This web map, created using ArcGIS Online, was the final project for my first-year GIS course <span>GGRA30</span>, which was taught by <span>Dr.&nbsp;Haydn Lawrence</span> in the winter of 2021. </a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html" class="no-external">
-<div class="listing-date">
-Apr 20, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="TmFuamluZyUyQ1N0YXRpYyUyMG1hcA==" data-listing-date-sort="1595217600000" data-listing-file-modified-sort="1727724914054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="131">
-<div class="thumbnail">
-<p><a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external"></a></p><a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external">
-<p class="card-img-top"><img src="images\Highschool.jpg"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external">Admission Universities of High School Classmates</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TmFuamluZw=='); return false;">
-Nanjing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGljJTIwbWFw'); return false;">
-Static map
-</div>
-</div>
-<div class="listing-description">
-<a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external">As a parting gift for my high school classmates and teachers, I created a heat map showcasing the universities they were admitted to in the year 2020. The map, written in…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./data_visualization/2020-07-20-high-school-graduation/index.html" class="no-external">
-<div class="listing-date">
-Jul 20, 2020
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1372,6 +925,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="zehuiyin/zehuiyin.github.io" data-repo-id="R_kgDOKVxrzA" data-category="Announcements" data-category-id="DIC_kwDOKVxrzM4Ccs4G" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="transparent_dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="transparent_dark">
+<input type="hidden" id="giscus-alt-theme" value="transparent_dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -10,7 +10,35 @@
 <atom:link href="https://zehuiyin.github.io/data_analysis.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
 <generator>quarto-1.6.39</generator>
-<lastBuildDate>Fri, 06 Dec 2024 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 08 Feb 2025 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Loot Box Opening Simulation</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This Shiny app is built using Shinylive, which allows it to run entirely on the frontend without the need for a server. However, this also means that it may take some time to load in the web browser.</p>
+<style>.embed-container {position: relative; padding-bottom: 45%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Location_Map" src="https://zehuiyin.github.io/lootbox_simulation/">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>To access the web app in full screen, please click on this <a href="https://zehuiyin.github.io/lootbox_simulation/">link</a>.</p>
+
+
+
+ ]]></description>
+  <category>Simulation</category>
+  <category>Shiny</category>
+  <guid>https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/</guid>
+  <pubDate>Sat, 08 Feb 2025 05:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/thumbnail.png" medium="image" type="image/png" height="62" width="144"/>
+</item>
 <item>
   <title>Food Deserts or Food Oases? Predicting Grocery Store Locations in Hamilton, Ontario</title>
   <dc:creator>Zehui Yin</dc:creator>
