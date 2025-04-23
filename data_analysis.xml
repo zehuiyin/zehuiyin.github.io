@@ -10,7 +10,171 @@
 <atom:link href="https://zehuiyin.github.io/data_analysis.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
 <generator>quarto-1.6.42</generator>
-<lastBuildDate>Sat, 08 Feb 2025 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 20 Apr 2025 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Subway Delay and Bike Share Usage in Toronto</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>How do subway riders respond to service disruptions? Do they turn to alternative modes like bike share to reach their destinations? This study examines bike share trip data and subway delay records in Toronto to determine whether bike share mitigates service disruptions and enhances transit system resilience.</p>
+<p>As part of the 2025 ECCE App Challenge, we analyzed the relationship between subway delays and bike share ridership. Our findings indicate a surge in bike share usage following subway service disruptions. However, alarmingly, increased bike share ridership is also associated with a rise in traffic collisions.</p>
+<section id="data-sources" class="level1">
+<h1>Data sources</h1>
+<p>Below are the data sources used in the data analysis component of the app challenge. Note that the Toronto city boundary is utilized solely in the Shiny app data visualization but not in the modeling component.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Data Name</th>
+<th>URL</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TTC Subway Delay Data</td>
+<td><a href="https://open.toronto.ca/dataset/ttc-subway-delay-data/" class="uri">https://open.toronto.ca/dataset/ttc-subway-delay-data/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="even">
+<td>About TTC Routes and Schedules</td>
+<td><a href="https://open.toronto.ca/dataset/ttc-routes-and-schedules/" class="uri">https://open.toronto.ca/dataset/ttc-routes-and-schedules/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="odd">
+<td>Bike Share Toronto</td>
+<td><a href="https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information/" class="uri">https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="even">
+<td>Bike Share Toronto Ridership Data</td>
+<td><a href="https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/" class="uri">https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="odd">
+<td>Traffic Collisions Open Data</td>
+<td><a href="https://data.torontopolice.on.ca/datasets/TorontoPS::traffic-collisions-open-data-asr-t-tbl-001/about/" class="uri">https://data.torontopolice.on.ca/datasets/TorontoPS::traffic-collisions-open-data-asr-t-tbl-001/about/</a></td>
+<td>2025-03-22</td>
+</tr>
+<tr class="even">
+<td>Regional Municipal Boundary</td>
+<td><a href="https://open.toronto.ca/dataset/regional-municipal-boundary/" class="uri">https://open.toronto.ca/dataset/regional-municipal-boundary/</a></td>
+<td>2025-03-26</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method" class="level1">
+<h1>Method</h1>
+<p>The study period is September 2024, and the study area covers the service area of the Toronto Bike Share system. This area is defined by creating a 200-meter buffer around all bike share stations, followed by the creation of a concave hull with a convex fraction of 0.05 to exclude regions without bike share stations. Subsequently, a hexagonal grid is generated with cells having a distance of 500 meters between opposing edges. Temporal dimensions are incorporated at 3-hour intervals, forming space-time hexagonal cubes.</p>
+<p>For each space-time hexagon cube, the following metrics are calculated:</p>
+<ol type="1">
+<li>Total number of bike share trip starts.</li>
+<li>Subway delay minutes.</li>
+<li>Number of traffic collisions.</li>
+</ol>
+<p>Two-way fixed-effect linear regression model and linear probability model are applied as follows:</p>
+<ol type="1">
+<li>To model bike share trip starts and subway delay minutes: <img src="https://latex.codecogs.com/png.latex?%5Clog(%5Ctext%7Bbikeshare%7D_%7Bit%7D%20+%201)%20=%20%5Csum%20%5Calpha_i%20+%20%5Csum%20%5Cgamma_t%20+%20%5Cbeta_1%20%5Ctext%7Bsubway%20delay%7D_%7Bit%7D%20+%20%5Cepsilon_%7Bit%7D"></li>
+<li>To model the presence of traffic collisions and bike share trip starts: <img src="https://latex.codecogs.com/png.latex?I(%5Ctext%7Bcollision%7D_%7Bit%7D%20%5Cgeq%201)%20=%20%5Csum%20%5Calpha_i%20+%20%5Csum%20%5Cgamma_t%20+%20%5Cbeta_1%20%5Ctext%7Bbikeshare%7D_%7Bit%7D%20+%20%5Cepsilon_%7Bit%7D"></li>
+</ol>
+<p>Here, <img src="https://latex.codecogs.com/png.latex?%5Calpha_i"> represents the hexagon-specific fixed effect, <img src="https://latex.codecogs.com/png.latex?%5Cgamma_t"> represents the time-interval-specific fixed effect, and OLS estimation procedures are employed for both models.</p>
+</section>
+<section id="descriptive-statistics" class="level1">
+<h1>Descriptive statistics</h1>
+<p>The Shiny app below visualizes bike share ridership, subway delays, and traffic collisions. Click the image or follow this <a href="https://zehuiyin.shinyapps.io/app_challenge_2025/">link</a> to explore the interactive map.</p>
+<p><a href="https://zehuiyin.shinyapps.io/app_challenge_2025/"><img src="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png" class="img-fluid"></a></p>
+<p>The figures below illustrate the average temporal variations in the three variables across the hexagonal grid at three-hour intervals.</p>
+<style>.embed-container {position: relative; padding-bottom: 50%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="bikeshare" src="https://app-challenge-25.pages.dev/bikeshare">
+</iframe>
+</div>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="subway_delay" src="https://app-challenge-25.pages.dev/subway_delay">
+</iframe>
+</div>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="collision" src="https://app-challenge-25.pages.dev/collision">
+</iframe>
+</div>
+</section>
+<section id="modelling-results" class="level1">
+<h1>Modelling results</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 37%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><img src="https://latex.codecogs.com/png.latex?log(%5Ctext%7Bbikeshare%7D_%7Bit%7D%20+%201)"></th>
+<th><img src="https://latex.codecogs.com/png.latex?I(%5Ctext%7Bcollision%7D_%7Bit%7D%20%5Cge%201)"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Subway Delay Minute</td>
+<td><strong>0.0035888 (0.0017486)</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bike Share Trip Start</td>
+<td></td>
+<td><strong>0.000348867 (0.00003176907)</strong></td>
+</tr>
+<tr class="odd">
+<td>Two-way Fixed Effects</td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Ccheckmark"></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Ccheckmark"></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?R%5E2"></td>
+<td>0.7934377</td>
+<td>0.0268775</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="senacio-simulation" class="level1">
+<h1>Senacio simulation</h1>
+<p>We conducted a scenario analysis where an additional 30-minute subway delay was introduced system-wide. The predicted bike share ridership increased significantly under this simulated disruption.</p>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="simulation" src="https://app-challenge-25.pages.dev/">
+</iframe>
+</div>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<ul>
+<li>Both Subway Delay minutes and Bike Share trip starts are significant at the commonly-used 5% significance level.</li>
+<li>An increase in subway delays (holding all else constant) correlates with an increase in bike share trip starts. Similarly, an increase in bike share trip starts (holding all else constant) corresponds to a higher probability of traffic collisions.</li>
+<li>Two-way fixed effects control for variables that remain constant across either space or time, including temporal trends (e.g., weekends) and built environment factors (e.g., land use characteristics).</li>
+</ul>
+</section>
+<section id="model-evaluation" class="level1">
+<h1>Model evaluation</h1>
+<ul>
+<li>The model predicting <img src="https://latex.codecogs.com/png.latex?%5Clog(%5Ctext%7Bbikeshare%7D_%7Bit%7D%20+%201)"> achieves an <img src="https://latex.codecogs.com/png.latex?R%5E2"> close to 0.8, indicating strong explanatory power.</li>
+<li>The linear probability model predicting collisions has an <img src="https://latex.codecogs.com/png.latex?R%5E2"> of approximately 0.03. Traffic collisions are rare and inherently random, meaning that the deterministic component of the process is theoretically small relative to the random component. Therefore, although the model does not explain much of the total variation, it remains informative, demonstrating a positive correlation between bike share ridership and traffic collisions.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>Toronto</category>
+  <category>Bikeshare</category>
+  <category>Spatial analysis</category>
+  <guid>https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/</guid>
+  <pubDate>Sun, 20 Apr 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png" medium="image" type="image/png" height="95" width="144"/>
+</item>
 <item>
   <title>Loot Box Opening Simulation</title>
   <dc:creator>Zehui Yin</dc:creator>

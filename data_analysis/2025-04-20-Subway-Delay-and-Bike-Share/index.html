@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Zehui Yin">
+<meta name="dcterms.date" content="2025-04-20">
+<meta name="description" content="This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.">
 
-<title>404 Page Not Found – Zehui Yin’s Personal Websites</title>
+<title>Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Websites</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,29 +26,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="/site_libs/quarto-nav/headroom.min.js"></script>
-<script src="/site_libs/clipboard/clipboard.min.js"></script>
-<script src="/site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="/site_libs/quarto-search/fuse.min.js"></script>
-<script src="/site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="/">
-<link href="/./images/favicon.ico" rel="icon">
-<script src="/site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="/site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="/site_libs/quarto-html/quarto.js"></script>
-<script src="/site_libs/quarto-html/popper.min.js"></script>
-<script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="/site_libs/quarto-html/anchor.min.js"></script>
-<link href="/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-53c3e1fa1a1e870559c27668da30ec4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark-fb2d9f1bd06af04f240f8aea3837da3a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="/site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="/site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/favicon.ico" rel="icon">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-53c3e1fa1a1e870559c27668da30ec4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-fb2d9f1bd06af04f240f8aea3837da3a.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,33 +142,60 @@ if (localStorage.getItem("not_first_load") === null) {
 }
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="/styles.css">
-<meta property="og:title" content="404 Page Not Found – Zehui Yin’s Personal Websites">
-<meta property="og:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
-<meta property="og:image" content="https://zehuiyin.github.io//./images/404.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Websites">
+<meta property="og:description" content="This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.">
+<meta property="og:image" content="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png">
 <meta property="og:site_name" content="Zehui Yin's Personal Websites">
-<meta property="og:image:alt" content="404">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:width" content="1024">
-<meta name="twitter:title" content="404 Page Not Found – Zehui Yin’s Personal Websites">
-<meta name="twitter:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
-<meta name="twitter:image" content="https://zehuiyin.github.io//./images/404.png">
+<meta property="og:image:height" content="847">
+<meta property="og:image:width" content="1281">
+<meta name="twitter:title" content="Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Websites">
+<meta name="twitter:description" content="This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.">
+<meta name="twitter:image" content="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png">
 <meta name="twitter:site" content="@zehuiyin">
-<meta name="twitter:image:alt" content="404">
-<meta name="twitter:image-height" content="1024">
-<meta name="twitter:image-width" content="1024">
+<meta name="twitter:image-height" content="847">
+<meta name="twitter:image-width" content="1281">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><strong>Zehui Yin</strong> | 殷泽辉</span>
     </a>
   </div>
@@ -224,25 +254,136 @@ if (localStorage.getItem("not_first_load") === null) {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">Subway Delay and Bike Share Usage in Toronto</h1>
+        </a>     
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Home</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About Me</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../CV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curriculum Vitae</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualization</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link active" data-scroll-target="#data-sources">Data sources</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive statistics</a></li>
+  <li><a href="#modelling-results" id="toc-modelling-results" class="nav-link" data-scroll-target="#modelling-results">Modelling results</a></li>
+  <li><a href="#senacio-simulation" id="toc-senacio-simulation" class="nav-link" data-scroll-target="#senacio-simulation">Senacio simulation</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model evaluation</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">404 Page Not Found</h1>
-</div>
+<h1 class="title d-none d-lg-block">Subway Delay and Bike Share Usage in Toronto</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Toronto</div>
+    <div class="quarto-category">Bikeshare</div>
+    <div class="quarto-category">Spatial analysis</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Zehui Yin </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 20, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -252,24 +393,152 @@ if (localStorage.getItem("not_first_load") === null) {
 </header>
 
 
-<style>
-#title-block-header {
-  display: none;
-}
-</style>
-<div style="text-align: center;">
-<p><img src="/./images/404.png" alt="404" style="width: 40%;"></p>
-<p style="font-size: 2rem;">
-<b> 404 Page Not Found </b>
-</p>
-<p>Sorry, the page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to go back to the home page or try searching in the top right corner.</p>
+<p>How do subway riders respond to service disruptions? Do they turn to alternative modes like bike share to reach their destinations? This study examines bike share trip data and subway delay records in Toronto to determine whether bike share mitigates service disruptions and enhances transit system resilience.</p>
+<p>As part of the 2025 ECCE App Challenge, we analyzed the relationship between subway delays and bike share ridership. Our findings indicate a surge in bike share usage following subway service disruptions. However, alarmingly, increased bike share ridership is also associated with a rise in traffic collisions.</p>
+<section id="data-sources" class="level1">
+<h1>Data sources</h1>
+<p>Below are the data sources used in the data analysis component of the app challenge. Note that the Toronto city boundary is utilized solely in the Shiny app data visualization but not in the modeling component.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Data Name</th>
+<th>URL</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TTC Subway Delay Data</td>
+<td><a href="https://open.toronto.ca/dataset/ttc-subway-delay-data/" class="uri">https://open.toronto.ca/dataset/ttc-subway-delay-data/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="even">
+<td>About TTC Routes and Schedules</td>
+<td><a href="https://open.toronto.ca/dataset/ttc-routes-and-schedules/" class="uri">https://open.toronto.ca/dataset/ttc-routes-and-schedules/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="odd">
+<td>Bike Share Toronto</td>
+<td><a href="https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information/" class="uri">https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="even">
+<td>Bike Share Toronto Ridership Data</td>
+<td><a href="https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/" class="uri">https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/</a></td>
+<td>2025-03-21</td>
+</tr>
+<tr class="odd">
+<td>Traffic Collisions Open Data</td>
+<td><a href="https://data.torontopolice.on.ca/datasets/TorontoPS::traffic-collisions-open-data-asr-t-tbl-001/about/" class="uri">https://data.torontopolice.on.ca/datasets/TorontoPS::traffic-collisions-open-data-asr-t-tbl-001/about/</a></td>
+<td>2025-03-22</td>
+</tr>
+<tr class="even">
+<td>Regional Municipal Boundary</td>
+<td><a href="https://open.toronto.ca/dataset/regional-municipal-boundary/" class="uri">https://open.toronto.ca/dataset/regional-municipal-boundary/</a></td>
+<td>2025-03-26</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method" class="level1">
+<h1>Method</h1>
+<p>The study period is September 2024, and the study area covers the service area of the Toronto Bike Share system. This area is defined by creating a 200-meter buffer around all bike share stations, followed by the creation of a concave hull with a convex fraction of 0.05 to exclude regions without bike share stations. Subsequently, a hexagonal grid is generated with cells having a distance of 500 meters between opposing edges. Temporal dimensions are incorporated at 3-hour intervals, forming space-time hexagonal cubes.</p>
+<p>For each space-time hexagon cube, the following metrics are calculated:</p>
+<ol type="1">
+<li>Total number of bike share trip starts.</li>
+<li>Subway delay minutes.</li>
+<li>Number of traffic collisions.</li>
+</ol>
+<p>Two-way fixed-effect linear regression model and linear probability model are applied as follows:</p>
+<ol type="1">
+<li>To model bike share trip starts and subway delay minutes: <span class="math display">\[\log(\text{bikeshare}_{it} + 1) = \sum \alpha_i + \sum \gamma_t + \beta_1 \text{subway delay}_{it} + \epsilon_{it}\]</span></li>
+<li>To model the presence of traffic collisions and bike share trip starts: <span class="math display">\[I(\text{collision}_{it} \geq 1) = \sum \alpha_i + \sum \gamma_t + \beta_1 \text{bikeshare}_{it} + \epsilon_{it}\]</span></li>
+</ol>
+<p>Here, <span class="math inline">\(\alpha_i\)</span> represents the hexagon-specific fixed effect, <span class="math inline">\(\gamma_t\)</span> represents the time-interval-specific fixed effect, and OLS estimation procedures are employed for both models.</p>
+</section>
+<section id="descriptive-statistics" class="level1">
+<h1>Descriptive statistics</h1>
+<p>The Shiny app below visualizes bike share ridership, subway delays, and traffic collisions. Click the image or follow this <a href="https://zehuiyin.shinyapps.io/app_challenge_2025/">link</a> to explore the interactive map.</p>
+<p><a href="https://zehuiyin.shinyapps.io/app_challenge_2025/"><img src="./thumbnail.png" class="img-fluid"></a></p>
+<p>The figures below illustrate the average temporal variations in the three variables across the hexagonal grid at three-hour intervals.</p>
+<style>.embed-container {position: relative; padding-bottom: 50%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="bikeshare" src="https://app-challenge-25.pages.dev/bikeshare">
+</iframe>
 </div>
-<p style="text-align: center;">
-<a href="javascript:history.go(-1)"><i class="fa-solid fa-arrow-left" aria-label="arrow-left"></i>Go Back</a> | <a href="https://zehuiyin.github.io/"><i class="fa-solid fa-house" aria-label="house"></i>Return Home</a>
-</p>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="subway_delay" src="https://app-challenge-25.pages.dev/subway_delay">
+</iframe>
+</div>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="collision" src="https://app-challenge-25.pages.dev/collision">
+</iframe>
+</div>
+</section>
+<section id="modelling-results" class="level1">
+<h1>Modelling results</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 37%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(log(\text{bikeshare}_{it} + 1)\)</span></th>
+<th><span class="math inline">\(I(\text{collision}_{it} \ge 1)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Subway Delay Minute</td>
+<td><strong>0.0035888 (0.0017486)</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bike Share Trip Start</td>
+<td></td>
+<td><strong>0.000348867 (0.00003176907)</strong></td>
+</tr>
+<tr class="odd">
+<td>Two-way Fixed Effects</td>
+<td><span class="math inline">\(\checkmark\)</span></td>
+<td><span class="math inline">\(\checkmark\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(R^2\)</span></td>
+<td>0.7934377</td>
+<td>0.0268775</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="senacio-simulation" class="level1">
+<h1>Senacio simulation</h1>
+<p>We conducted a scenario analysis where an additional 30-minute subway delay was introduced system-wide. The predicted bike share ridership increased significantly under this simulated disruption.</p>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="simulation" src="https://app-challenge-25.pages.dev/">
+</iframe>
+</div>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<ul>
+<li>Both Subway Delay minutes and Bike Share trip starts are significant at the commonly-used 5% significance level.</li>
+<li>An increase in subway delays (holding all else constant) correlates with an increase in bike share trip starts. Similarly, an increase in bike share trip starts (holding all else constant) corresponds to a higher probability of traffic collisions.</li>
+<li>Two-way fixed effects control for variables that remain constant across either space or time, including temporal trends (e.g., weekends) and built environment factors (e.g., land use characteristics).</li>
+</ul>
+</section>
+<section id="model-evaluation" class="level1">
+<h1>Model evaluation</h1>
+<ul>
+<li>The model predicting <span class="math inline">\(\log(\text{bikeshare}_{it} + 1)\)</span> achieves an <span class="math inline">\(R^2\)</span> close to 0.8, indicating strong explanatory power.</li>
+<li>The linear probability model predicting collisions has an <span class="math inline">\(R^2\)</span> of approximately 0.03. Traffic collisions are rare and inherently random, meaning that the deterministic component of the process is theoretically small relative to the random component. Therefore, although the model does not explain much of the total variation, it remains informative, demonstrating a positive correlation between bike share ridership and traffic collisions.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -833,6 +1102,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="zehuiyin/zehuiyin.github.io" data-repo-id="R_kgDOKVxrzA" data-category="Announcements" data-category-id="DIC_kwDOKVxrzM4Ccs4G" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="transparent_dark" data-lang="en" crossorigin="anonymous" data-loading="lazy" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="transparent_dark">
+<input type="hidden" id="giscus-alt-theme" value="transparent_dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
