@@ -141,8 +141,8 @@
 </tbody>
 </table>
 </section>
-<section id="senacio-simulation" class="level1">
-<h1>Senacio simulation</h1>
+<section id="scenario-simulation" class="level1">
+<h1>Scenario simulation</h1>
 <p>We conducted a scenario analysis where an additional 30-minute subway delay was introduced system-wide. The predicted bike share ridership increased significantly under this simulated disruption.</p>
 <div class="embed-container">
 <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="simulation" src="https://app-challenge-25.pages.dev/">
