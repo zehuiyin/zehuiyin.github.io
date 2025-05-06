@@ -9,13 +9,14 @@
 <link>https://zehuiyin.github.io/data_analysis.html</link>
 <atom:link href="https://zehuiyin.github.io/data_analysis.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
-<generator>quarto-1.6.42</generator>
+<generator>quarto-1.7.30</generator>
 <lastBuildDate>Sun, 20 Apr 2025 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Subway Delay and Bike Share Usage in Toronto</title>
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -184,6 +185,7 @@
 
 
 
+
 <p>This Shiny app is built using Shinylive, which allows it to run entirely on the frontend without the need for a server. However, this also means that it may take some time to load in the web browser.</p>
 <style>.embed-container {position: relative; padding-bottom: 45%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
 <div class="embed-container">
@@ -208,6 +210,7 @@
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2024-12-06-Food-Deserts-or-Food-Oases-Predicting-Grocery-Store-Locations-in-Hamilton-Ontario/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -255,6 +258,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/grocery_stor
 
 
 
+
 <p><img src="https://zehuiyin.github.io/data_analysis/2024-04-10-How-Close-is-Too-Close-Exploring-the-Relationship-Between-Bike-Theft-and-Police-Facility-Distance-in-Toronto/thumbnail.png" class="preview-image img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -294,6 +298,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/bike_theft_p
   <dc:creator>Filip Panaitescu, Shixiang Xing, and Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2024-03-31-Toward-Equitable-Service-Provision-A-Catchment-Area-Analysis-of-The-Bike-Share-Toronto-System/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -341,6 +346,7 @@ If the embedded PDF is not displayed properly, <a href="https://zehuiyin.github.
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2023-12-02-package-sifr/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -923,6 +929,7 @@ font-style: inherit;">"entropy"</span>)</span></code></pre></div>
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2023-11-17-Time-Series-OLS-Estimation-Bias/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1713,6 +1720,7 @@ font-style: inherit;">0.5</span>))</span></code></pre></div>
 
 
 
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://zehuiyin.github.io/images/GGRC32_routing_workflow.png" class="img-fluid figure-img"></p>
@@ -1746,6 +1754,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/routing_toro
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2022-12-13-Spatial-patterns-of-seasonal-ridership,-built-enviroument-and-social-demographics-A-taxonomy-of-Bike-Share-Toronto-stations/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -1785,6 +1794,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/Bikeshare_To
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2022-10-15-Semicircle-Problem-with-Simulation/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -3533,6 +3543,7 @@ font-style: inherit;">"lightblue"</span>)</span></code></pre></div>
   <dc:creator>Zehui Yin</dc:creator>
   <link>https://zehuiyin.github.io/data_analysis/2021-11-03-Binary-and-Multinomial-Logistic-Regression/</link>
   <description><![CDATA[ 
+
 
 
 
