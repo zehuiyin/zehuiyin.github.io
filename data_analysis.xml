@@ -10,7 +10,7 @@
 <atom:link href="https://zehuiyin.github.io/data_analysis.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
 <generator>quarto-1.7.30</generator>
-<lastBuildDate>Sun, 20 Apr 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 19 Apr 2025 16:00:00 GMT</lastBuildDate>
 <item>
   <title>Subway Delay and Bike Share Usage in Toronto</title>
   <dc:creator>Zehui Yin</dc:creator>
@@ -173,7 +173,7 @@
   <category>Bikeshare</category>
   <category>Spatial analysis</category>
   <guid>https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/</guid>
-  <pubDate>Sun, 20 Apr 2025 04:00:00 GMT</pubDate>
+  <pubDate>Sat, 19 Apr 2025 16:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png" medium="image" type="image/png" height="95" width="144"/>
 </item>
 <item>
@@ -202,7 +202,7 @@
   <category>Simulation</category>
   <category>Shiny</category>
   <guid>https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/</guid>
-  <pubDate>Sat, 08 Feb 2025 05:00:00 GMT</pubDate>
+  <pubDate>Fri, 07 Feb 2025 16:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/thumbnail.png" medium="image" type="image/png" height="62" width="144"/>
 </item>
 <item>
@@ -247,7 +247,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/grocery_stor
   <category>Linear regression</category>
   <category>R package</category>
   <guid>https://zehuiyin.github.io/data_analysis/2024-12-06-Food-Deserts-or-Food-Oases-Predicting-Grocery-Store-Locations-in-Hamilton-Ontario/</guid>
-  <pubDate>Fri, 06 Dec 2024 05:00:00 GMT</pubDate>
+  <pubDate>Thu, 05 Dec 2024 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>How Close is Too Close? Exploring the Relationship Between Bike Theft and Police Facility Distance in Toronto</title>
@@ -291,7 +291,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/bike_theft_p
   <category>Crime</category>
   <category>Linear regression</category>
   <guid>https://zehuiyin.github.io/data_analysis/2024-04-10-How-Close-is-Too-Close-Exploring-the-Relationship-Between-Bike-Theft-and-Police-Facility-Distance-in-Toronto/</guid>
-  <pubDate>Wed, 10 Apr 2024 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 09 Apr 2024 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Toward Equitable Service Provision: A Catchment Area Analysis of The Bike Share Toronto System</title>
@@ -339,7 +339,7 @@ If the embedded PDF is not displayed properly, <a href="https://zehuiyin.github.
   <category>Bikeshare</category>
   <category>Spatial analysis</category>
   <guid>https://zehuiyin.github.io/data_analysis/2024-03-31-Toward-Equitable-Service-Provision-A-Catchment-Area-Analysis-of-The-Bike-Share-Toronto-System/</guid>
-  <pubDate>Sun, 31 Mar 2024 04:00:00 GMT</pubDate>
+  <pubDate>Sat, 30 Mar 2024 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>R Package sifr</title>
@@ -921,7 +921,7 @@ font-style: inherit;">"entropy"</span>)</span></code></pre></div>
   <category>R package</category>
   <category>Spatial analysis</category>
   <guid>https://zehuiyin.github.io/data_analysis/2023-12-02-package-sifr/</guid>
-  <pubDate>Sat, 02 Dec 2023 05:00:00 GMT</pubDate>
+  <pubDate>Fri, 01 Dec 2023 16:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_analysis/2023-12-02-package-sifr/thumbnail.png" medium="image" type="image/png" height="70" width="144"/>
 </item>
 <item>
@@ -1709,7 +1709,7 @@ font-style: inherit;">0.5</span>))</span></code></pre></div>
   <category>Simulation</category>
   <category>Linear regression</category>
   <guid>https://zehuiyin.github.io/data_analysis/2023-11-17-Time-Series-OLS-Estimation-Bias/</guid>
-  <pubDate>Fri, 17 Nov 2023 05:00:00 GMT</pubDate>
+  <pubDate>Thu, 16 Nov 2023 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto</title>
@@ -1747,7 +1747,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/routing_toro
   <category>Spatial analysis</category>
   <category>Routing</category>
   <guid>https://zehuiyin.github.io/data_analysis/2023-04-21-Travel-speed-and-routes-of-the-bike-share-system-An-analysis-of-Bike-Share-Toronto/</guid>
-  <pubDate>Fri, 21 Apr 2023 04:00:00 GMT</pubDate>
+  <pubDate>Thu, 20 Apr 2023 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Spatial Patterns of Seasonal Ridership, Built Environment and Social Demographics: A Taxonomy of Bike Share Toronto Stations</title>
@@ -1787,7 +1787,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/Bikeshare_To
   <category>Spatial analysis</category>
   <category>Cluster analysis</category>
   <guid>https://zehuiyin.github.io/data_analysis/2022-12-13-Spatial-patterns-of-seasonal-ridership,-built-enviroument-and-social-demographics-A-taxonomy-of-Bike-Share-Toronto-stations/</guid>
-  <pubDate>Tue, 13 Dec 2022 05:00:00 GMT</pubDate>
+  <pubDate>Mon, 12 Dec 2022 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Semicircle Problem with Simulation</title>
@@ -3536,7 +3536,7 @@ font-style: inherit;">"lightblue"</span>)</span></code></pre></div>
  ]]></description>
   <category>Simulation</category>
   <guid>https://zehuiyin.github.io/data_analysis/2022-10-15-Semicircle-Problem-with-Simulation/</guid>
-  <pubDate>Sat, 15 Oct 2022 04:00:00 GMT</pubDate>
+  <pubDate>Fri, 14 Oct 2022 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Binary and Multinomial Logistic Regression</title>
@@ -3562,7 +3562,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/Logistic_Reg
   <category>Discrete choice</category>
   <category>Linear regression</category>
   <guid>https://zehuiyin.github.io/data_analysis/2021-11-03-Binary-and-Multinomial-Logistic-Regression/</guid>
-  <pubDate>Wed, 03 Nov 2021 04:00:00 GMT</pubDate>
+  <pubDate>Tue, 02 Nov 2021 16:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_analysis/2021-11-03-Binary-and-Multinomial-Logistic-Regression/thumbnail.png" medium="image" type="image/png" height="83" width="144"/>
 </item>
 </channel>
