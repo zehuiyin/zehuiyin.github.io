@@ -10,7 +10,7 @@
 <atom:link href="https://zehuiyin.github.io/data_visualization.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
 <generator>quarto-1.7.30</generator>
-<lastBuildDate>Sat, 02 Nov 2024 16:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 03 Nov 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Tissot Circles in Different Coordinate Reference Systems</title>
   <dc:creator>Zehui Yin</dc:creator>
@@ -190,7 +190,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
  ]]></description>
   <category>Static map</category>
   <guid>https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/</guid>
-  <pubDate>Sat, 02 Nov 2024 16:00:00 GMT</pubDate>
+  <pubDate>Sun, 03 Nov 2024 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/mercator.png" medium="image" type="image/png" height="110" width="144"/>
 </item>
 <item>
@@ -215,7 +215,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Web map</category>
   <category>Shiny</category>
   <guid>https://zehuiyin.github.io/data_visualization/2024-10-09-HSR-Realtime-Location/</guid>
-  <pubDate>Tue, 08 Oct 2024 16:00:00 GMT</pubDate>
+  <pubDate>Wed, 09 Oct 2024 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2024-10-09-HSR-Realtime-Location/HSR_realtime.png" medium="image" type="image/png" height="76" width="144"/>
 </item>
 <item>
@@ -237,7 +237,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Web map</category>
   <category>Hamilton</category>
   <guid>https://zehuiyin.github.io/data_visualization/2024-10-07-Hamilton-Demographics/</guid>
-  <pubDate>Sun, 06 Oct 2024 16:00:00 GMT</pubDate>
+  <pubDate>Mon, 07 Oct 2024 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2024-10-07-Hamilton-Demographics/hamilton_demo.png" medium="image" type="image/png" height="75" width="144"/>
 </item>
 <item>
@@ -258,7 +258,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
  ]]></description>
   <category>Dashboard</category>
   <guid>https://zehuiyin.github.io/data_visualization/2023-11-17-Earthquake-Dashboard/</guid>
-  <pubDate>Thu, 16 Nov 2023 16:00:00 GMT</pubDate>
+  <pubDate>Fri, 17 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2023-11-17-Earthquake-Dashboard/dashboard.png" medium="image" type="image/png" height="90" width="144"/>
 </item>
 <item>
@@ -289,7 +289,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Simulation</category>
   <category>Shiny</category>
   <guid>https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/</guid>
-  <pubDate>Tue, 14 Nov 2023 16:00:00 GMT</pubDate>
+  <pubDate>Wed, 15 Nov 2023 05:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/thumbnail.png" medium="image" type="image/png" height="116" width="144"/>
 </item>
 <item>
@@ -321,7 +321,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Real time</category>
   <category>Web map</category>
   <guid>https://zehuiyin.github.io/data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/</guid>
-  <pubDate>Sat, 05 Aug 2023 16:00:00 GMT</pubDate>
+  <pubDate>Sun, 06 Aug 2023 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/thumbnail.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 <item>
@@ -353,7 +353,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Real time</category>
   <category>Web map</category>
   <guid>https://zehuiyin.github.io/data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/</guid>
-  <pubDate>Thu, 29 Jun 2023 16:00:00 GMT</pubDate>
+  <pubDate>Fri, 30 Jun 2023 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/thumbnail.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 <item>
@@ -387,7 +387,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Spatial analysis</category>
   <category>Web map</category>
   <guid>https://zehuiyin.github.io/data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/</guid>
-  <pubDate>Sun, 25 Jun 2023 16:00:00 GMT</pubDate>
+  <pubDate>Mon, 26 Jun 2023 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/thumbnail.png" medium="image" type="image/png" height="116" width="144"/>
 </item>
 <item>
@@ -499,7 +499,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Web map</category>
   <category>Gainesville</category>
   <guid>https://zehuiyin.github.io/data_visualization/2022-06-22-digital-twin-of-UF-campus/</guid>
-  <pubDate>Tue, 21 Jun 2022 16:00:00 GMT</pubDate>
+  <pubDate>Wed, 22 Jun 2022 04:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Map of Nanjing Tourist Attractions and Ticket Prices</title>
@@ -528,7 +528,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Nanjing</category>
   <category>Web map</category>
   <guid>https://zehuiyin.github.io/data_visualization/2021-04-20-Nanjing-Tourist-Attractions/</guid>
-  <pubDate>Mon, 19 Apr 2021 16:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 Apr 2021 04:00:00 GMT</pubDate>
   <media:content url="https://zehuiyin.github.io/data_visualization/2021-04-20-Nanjing-Tourist-Attractions/thumbnail.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 <item>
@@ -551,7 +551,7 @@ font-style: inherit;">32662</span>)</span></code></pre></div>
   <category>Nanjing</category>
   <category>Static map</category>
   <guid>https://zehuiyin.github.io/data_visualization/2020-07-20-high-school-graduation/</guid>
-  <pubDate>Sun, 19 Jul 2020 16:00:00 GMT</pubDate>
+  <pubDate>Mon, 20 Jul 2020 04:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
