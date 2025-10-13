@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Zehui Yin&#39;s Personal Websites</title>
+<link>https://zehuiyin.github.io/data_visualization.html</link>
+<atom:link href="https://zehuiyin.github.io/data_visualization.xml" rel="self" type="application/rss+xml"/>
+<description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
+<generator>quarto-1.8.24</generator>
+<lastBuildDate>Sun, 03 Nov 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Tissot Circles in Different Coordinate Reference Systems</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>In the post, I create several maps using different coordinate reference systems to demonstrate the distortion introduced by various types of projections. Projected coordinate systems are classified into equal-area, conformal, and equidistant or compromise projections, based on which characteristics they preserve: area, shape, or distance. There is no perfect projection; we always have to decide which features we want to preserve on our maps.</p>
+<div id="b4e3547e" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> geopandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> gpd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> pyproj <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> CRS</span></code></pre></div></div>
+</div>
+<p>Load the data used to create the maps. The <code>Admin.geojson</code> file contains the world administrative boundaries. The <code>Points_Buffer.geojson</code> file contains the Tissot circles, each with a geodesic radius of 600 kilometres.</p>
+<div id="740cdc41" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">url <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://github.com/zehuiyin/tissot_circles/raw/refs/heads/main/"</span></span>
+<span id="cb2-2">admin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> gpd.read_file(url <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Admin.geojson"</span>)</span>
+<span id="cb2-3">tissot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> gpd.read_file(url <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Points_Buffer.geojson"</span>)</span></code></pre></div></div>
+</div>
+<p>Create a function to reproject both datasets and map the Tissot circles on top of the administrative boundaries.</p>
+<div id="4547cf4c" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> tissot_map(epsg):</span>
+<span id="cb3-2">  fig, ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(dpi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">300</span>)</span>
+<span id="cb3-3">  admin.to_crs(epsg) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb3-4">    .plot(ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ax,</span>
+<span id="cb3-5">          color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"grey"</span>,</span>
+<span id="cb3-6">          zorder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb3-7">  tissot.to_crs(epsg) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb3-8">    .plot(ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ax, </span>
+<span id="cb3-9">          color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#1f78b4"</span>,</span>
+<span id="cb3-10">          zorder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb3-11">  ax.set_title(CRS.from_epsg(epsg).name)</span>
+<span id="cb3-12">  ax.set_aspect(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"equal"</span>)</span></code></pre></div></div>
+</div>
+<section id="geographic-coordinate-system-wgs-1984" class="level1">
+<h1>Geographic Coordinate System (WGS 1984)</h1>
+<p>Firstly, this map shows the World Geodetic System 1984, a geographic coordinate system that is unprojected. The map units are in degrees instead of metres.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">tissot_map(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4326</span>)</span></code></pre></div></div>
+<div id="38e7a8ee" class="cell quarto-layout-panel" data-execution_count="4" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/index_files/figure-html/cell-5-output-1.png" class="img-fluid" width="1804"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="projected-coordinate-system" class="level1">
+<h1>Projected Coordinate System</h1>
+<section id="world-mercator" class="level2">
+<h2 class="anchored" data-anchor-id="world-mercator">World Mercator</h2>
+<p>Then, this map shows the World Mercator projection, a conformal projection. As a result, the circle shapes are preserved in this map.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">tissot_map(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3395</span>)</span></code></pre></div></div>
+<div id="c6f88925" class="cell quarto-layout-panel" data-execution_count="5" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/index_files/figure-html/cell-6-output-1.png" class="img-fluid" width="1817"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="world-equidistant-cylindrical" class="level2">
+<h2 class="anchored" data-anchor-id="world-equidistant-cylindrical">World Equidistant Cylindrical</h2>
+<p>Thirdly, this map shows the World Equidistant Cylindrical projection. As the name suggests, it preserves distances in the map.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">tissot_map(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4087</span>)</span></code></pre></div></div>
+<div id="34be524b" class="cell quarto-layout-panel" data-execution_count="6" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/index_files/figure-html/cell-7-output-1.png" class="img-fluid" width="1844"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="equal-area-projection" class="level2">
+<h2 class="anchored" data-anchor-id="equal-area-projection">Equal Area Projection</h2>
+<p>This map uses an equal area projection, centred around Europe and Africa, which preserves area size.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">tissot_map(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8857</span>)</span></code></pre></div></div>
+<div id="bacac566" class="cell quarto-layout-panel" data-execution_count="7" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/index_files/figure-html/cell-8-output-1.png" class="img-fluid" width="1817"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="plate-carrée-projection" class="level2">
+<h2 class="anchored" data-anchor-id="plate-carrée-projection">Plate Carrée Projection</h2>
+<p>This map uses the Plate Carrée projection, a compromise projection that balances distortions in different characteristics rather than preserving any single feature.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">tissot_map(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">32662</span>)</span></code></pre></div></div>
+<div id="c5dc93b9" class="cell quarto-layout-panel" data-execution_count="8" data-layout="[[100]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/index_files/figure-html/cell-9-output-1.png" class="img-fluid" width="1844"></p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Static map</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/</guid>
+  <pubDate>Sun, 03 Nov 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2024-11-03-Tissot-Circles/mercator.png" medium="image" type="image/png" height="110" width="144"/>
+</item>
+<item>
+  <title>Hamilton Street Railway Real Time Web Map</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2024-10-09-HSR-Realtime-Location/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="https://zehuiyin.shinyapps.io/HSR_realtime_location/"><img src="https://zehuiyin.github.io/data_visualization/2024-10-09-HSR-Realtime-Location/HSR_realtime.png" class="img-fluid"></a></p>
+<p>This Shiny app provides real-time locations of Hamilton Street Railway transit vehicles. Sourced from Hamilton’s open data using <a href="https://opendata.hamilton.ca/GTFS-RT/">GTFS real-time feeds</a>, the vehicle locations refresh every minute. Click the image above or this <a href="https://zehuiyin.shinyapps.io/HSR_realtime_location/">link</a> to access the app on <em>Shinyapps.io</em> in a separate window.</p>
+
+
+
+ ]]></description>
+  <category>Hamilton</category>
+  <category>Public transit</category>
+  <category>Real time</category>
+  <category>Web map</category>
+  <category>Shiny</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2024-10-09-HSR-Realtime-Location/</guid>
+  <pubDate>Wed, 09 Oct 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2024-10-09-HSR-Realtime-Location/HSR_realtime.png" medium="image" type="image/png" height="76" width="144"/>
+</item>
+<item>
+  <title>Hamilton Demographic Maps</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2024-10-07-Hamilton-Demographics/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="https://zehuiyin.github.io/hamilton_demographics/"><img src="https://zehuiyin.github.io/data_visualization/2024-10-07-Hamilton-Demographics/hamilton_demo.png" class="img-fluid"></a></p>
+<p>This series of web maps showcases the demographics of Hamilton, based on data from the 2021 Census provided by Statistics Canada. Created using <em>R</em> packages <em>mapgl</em>, <em>flexdashboard</em>, and <em>cancensus</em>. Please click the image above or this <a href="https://zehuiyin.github.io/hamilton_demographics/">link</a> to access this series of web maps in a separate window.</p>
+
+
+
+ ]]></description>
+  <category>Web map</category>
+  <category>Hamilton</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2024-10-07-Hamilton-Demographics/</guid>
+  <pubDate>Mon, 07 Oct 2024 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2024-10-07-Hamilton-Demographics/hamilton_demo.png" medium="image" type="image/png" height="75" width="144"/>
+</item>
+<item>
+  <title>Earthquake Dashboard</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2023-11-17-Earthquake-Dashboard/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="https://zehuiyin.github.io/earthquake_dashboard/"><img src="https://zehuiyin.github.io/data_visualization/2023-11-17-Earthquake-Dashboard/dashboard.png" class="img-fluid"></a></p>
+<p>This dashboard is built using the flexdashboard package in r. The dashboard is static but updated once a day through Github Action. Please click the image above or this <a href="https://zehuiyin.github.io/earthquake_dashboard/">link</a> to access the dashboard in a separate window.</p>
+
+
+
+ ]]></description>
+  <category>Dashboard</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2023-11-17-Earthquake-Dashboard/</guid>
+  <pubDate>Fri, 17 Nov 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2023-11-17-Earthquake-Dashboard/dashboard.png" medium="image" type="image/png" height="90" width="144"/>
+</item>
+<item>
+  <title>Central Limit Theorem Demonstration</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>The Central Limit Theorem is a key concept in probability theory that is often introduced to first and second year undergraduate students as it implies that probabilistic and statistical methods such as parametric tests that work for normal distributions can be applied to many problems involving other types of distributions.</p>
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="CLT_demo" src="https://zehuiyin.github.io/CLT_demo/">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>This Shiny app is built using Shinylive, which allows it to run entirely on the frontend without the need for a server. However, this also means that it may take some time to load in the web browser. The app displays the histogram of the sample distribution, as well as the histogram and normal quantile plot of the sampling distribution of the sample mean for simulated samples drawn from various distributions, such as normal, uniform, chi-squared, and others. The app demonstrates that the sampling distribution of the mean will always be approximately normal, as long as the sample size is large enough.</p>
+<p>To access the web app in full screen, please click on this <a href="https://zehuiyin.github.io/CLT_demo/">link</a>.</p>
+
+
+
+ ]]></description>
+  <category>Central Limit Theorem</category>
+  <category>Simulation</category>
+  <category>Shiny</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/</guid>
+  <pubDate>Wed, 15 Nov 2023 05:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/thumbnail.png" medium="image" type="image/png" height="116" width="144"/>
+</item>
+<item>
+  <title>Toronto Bikeshare Station Info Web Map</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Bikeshare_Web_Map" src="https://zehuiyin.github.io/toronto_bikeshare_station_info/">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>The data comes from the <a href="https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information">GBFS</a>, a public API that provides standardized bike-sharing information. The map does not have an auto-refresh feature, because the API does not update very often. However, you can refresh the web page manually to get the most current data from the API.</p>
+<p>To access the web map, please click on this <a href="https://zehuiyin.github.io/toronto_bikeshare_station_info/">link</a>. You can zoom in and out, pan around, and click on the bus markers to see more information in pop-ups.</p>
+<p>Created by Zehui Yin with <i>MapLibre GL JS</i> and <i>Maptiler</i>.</p>
+
+
+
+ ]]></description>
+  <category>Toronto</category>
+  <category>Bikeshare</category>
+  <category>Real time</category>
+  <category>Web map</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/</guid>
+  <pubDate>Sun, 06 Aug 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/thumbnail.png" medium="image" type="image/png" height="115" width="144"/>
+</item>
+<item>
+  <title>Toronto Transit Commission Real Time Web Map</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="TTC_Web_Map" src="https://zehuiyin.github.io/TTC_realtime_location/">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>The real-time information is obtained from the <i>UMO Public XML Feed</i>.</p>
+<p>To access the web map, please click on this <a href="https://zehuiyin.github.io/TTC_realtime_location/">link</a>. You can zoom in and out, pan around, and click on the bus markers to see more information in pop-ups. You can also toggle between different basemap layers and data layers using the buttons on the top right corner of the map.</p>
+<p>Created by Zehui Yin with <i>Leaflet</i> and <i>OpenStreetMap</i></p>
+
+
+
+ ]]></description>
+  <category>Toronto</category>
+  <category>Public transit</category>
+  <category>Real time</category>
+  <category>Web map</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/</guid>
+  <pubDate>Fri, 30 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/thumbnail.png" medium="image" type="image/png" height="115" width="144"/>
+</item>
+<item>
+  <title>Toronto Bike Share Web Map</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Toronto_Bike_Share_Web_Map" src="https://zehuiyin.github.io/toronto_bike_share_web_map/">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>The results of two projects based on data from 2021, <a href="https://github.com/zehuiyin/cluster_analysis_toronto_bikeshare">Spatial patterns of seasonal ridership, built environment and social demographics: A taxonomy of Bike Share Toronto stations</a> and <a href="https://github.com/zehuiyin/travel_speed_and_routes_toronto_bikeshare">Travel speed and routes of the bike-share system: An analysis of Bike Share Toronto</a>, are shown in the map above. It allows users to explore the seasonal ridership patterns, built environment and social demographics of different station clusters, as well as the travel speed and routes of the bike-share system.</p>
+<p>The data for this web map was obtained from the Bike Share Toronto and the City of Toronto Open Data Portal. The spatial analysis was conducted using R. The web map was created using the Leaflet library and OpenStreetMap.</p>
+<p>To access the web map, please click on this <a href="https://zehuiyin.github.io/toronto_bike_share_web_map/">link</a>. You can zoom in and out, pan around, and click on the station markers or route lines to see more information in pop-ups. You can also toggle between different basemap layers and data layers using the buttons on the top left corner of the map.</p>
+<p>This web map provides a visual and interactive way to understand the spatial dynamics of Bike Share Toronto. It reveals how different factors such as seasonality, land use, income, age, and distance affect the ridership and travel behaviour of bike-share users in Toronto.</p>
+<p>Created by Zehui Yin with <i>Leaflet</i> and <i>OpenStreetMap</i>.</p>
+
+
+
+ ]]></description>
+  <category>Toronto</category>
+  <category>Bikeshare</category>
+  <category>Spatial analysis</category>
+  <category>Web map</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/</guid>
+  <pubDate>Mon, 26 Jun 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/thumbnail.png" medium="image" type="image/png" height="116" width="144"/>
+</item>
+<item>
+  <title>Digital Twin with Real-time Transit Data: UF Campus with RTS</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2022-06-22-digital-twin-of-UF-campus/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://zehuiyin.github.io/images/digital_twins.png" class="img-fluid"></p>
+<section id="project-summary" class="level2">
+<h2 class="anchored" data-anchor-id="project-summary">Project summary</h2>
+<p>This project creates an ArcGIS Online web app with a 3D map which focuses on the UF campus. The 3D map contains the 3D models of the buildings on the UF campus, city roads, bus stops and the real-time RTS buses’ locations.</p>
+</section>
+<section id="software-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="software-requirements">Software requirements</h2>
+<ol type="1">
+<li>ArcGIS Pro</li>
+<li>ArcGIS Online</li>
+<li>ArcGIS CityEngine</li>
+<li>(Optional) Python IDE</li>
+</ol>
+</section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
+<ol type="1">
+<li>OpenStreetMap</li>
+<li>City of Gainesville open data</li>
+<li>GNV RideRTS API</li>
+</ol>
+</section>
+<section id="workflow" class="level2">
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<ol type="1">
+<li>Generate 3D building models on the UF campus</li>
+</ol>
+<p>In the ArcGIS CityEngine, first, create a new project with a new scene. Then click file &gt; get map data, selecting the UF campus area. After that, align the downloaded 3D building models to the terrains. Finally, export the 3D building models into Esri Scene Layer Package (.slpk).</p>
+<ol start="2" type="1">
+<li>Download the JSON file from RTS API and convert it into Geojson</li>
+</ol>
+<p>Due to the API limitations, there is no command to return all the vehicles’ locations. To get around this, we need to create a python script to automate the multiple downloads and merge them into one file. In the “download_request_example.py”, I called the API four times to return different routes’ bus locations which together merged into one JSON that contains all the vehicle locations. Please note that each time I called the API, I filtered the JSON response from the API. Only after the proper filter, the JSON file’s structure is recognizable and convertible by the converter python script. Also, I created four artificial vehicle locations at the end of the JSON file which contains all four different occupancy levels of the buses, by doing this the legend in the later web app would always contain the four occupancy levels.</p>
+<p>Then we use the cmd to call the converter python script. Firstly, we set the directory to where the converter is located. Then we use the following code:</p>
+<p><code>call "%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy" Json2GeoJSON.py &lt;json file location&gt;</code></p>
+<p>After the first run, the converter python script would create an ini file alongside the JSON file you use as the input. The first conversion would likely be unsuccessful as the configuration in the ini file is just created and not manually corrected based on the input data. After the first conversion, correct the ini file to exactly the same as the gainData.ini.</p>
+<ol start="3" type="1">
+<li>Upload the models and layers to ArcGIS Online</li>
+</ol>
+<p>Get all the background layers like City of Gainesville roads, transit routes and stops from the city website’s open data portal. Upload all the background layers as well as the slpk file in step 1 and the Geojson file in step 2 to the ArcGIS online. Note: create a hosted feature layer for the Geojson file during the upload, as we will later constantly update it to make a real-time map.</p>
+<ol start="4" type="1">
+<li>Create a web scene and further use it to create a web app</li>
+</ol>
+<p>In ArcGIS Online, use the feature layers that have been uploaded to firstly create a web scene. Then create a web app using the web scene. Remember in the web scene setting to set the refresh time to the minimum, which will reduce the update interval in the ArcGIS server later.</p>
+<ol start="5" type="1">
+<li>Config constant upload bat file in a local computer</li>
+</ol>
+<p>Before updating the hosted feature layer that contains the vehicle information, we need to first store the ArcGIS authentication locally. Due to the UF Gatorlink using two-factor authentication to log in, it would be troublesome to simply store the username and password on the computer. The way to get around this is to first use the following python command in the ArcGIS Pro python environment:</p>
+<p><code>gis = arcgis.GIS(url=&lt;organization_arcgis_portal&gt;, username='', password='', profile='learn_user')</code></p>
+<p>This command would store your username and password in the learn_user profile, however, so far it cannot go through the ArcGIS Online portal yet. After this then, before updating the feature layer, call the following command in the ArcGIS Pro python environment while keeping ArcGIS Pro running in the background:</p>
+<p><code>gis = arcgis.GIS("pro", profile='learn_user')</code></p>
+<p>This command would use ArcGIS Pro to authenticate the profile called learn_user. Please note that use the same account you use in ArcGIS Online in ArcGIS Pro.</p>
+<p>Then we can update the hosted feature layer that contains all the vehicle locations by the following command in the ArcGIS Pro python environment:</p>
+<p><code>call "%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy" OverwriteFS.py learn_user &lt;ID&gt; &lt;Name&gt; &lt;location of your downloaded json file&gt;</code></p>
+<p>Note the ID and the name correspond to the upper right corner and the lower-left corner respectively.</p>
+<p><img src="https://zehuiyin.github.io/images/IDandName.png" class="img-fluid"></p>
+<p>Finally, we can use the windows task scheduler to run the bat file every minute to automatically update the hosted feature layer. Or we can use the Invisible_mode_exxec.vbs to hiddenly execute the bat file. Please note that if you want to schedule a task to run the vbs, you need to use the following setting:</p>
+<p>Action: Start a program</p>
+<p>Program/script: <code>C:\Windows\System32\wscript.exe</code></p>
+<p>Add arguments (optional): <code>C:\Scripts\script.vbs</code></p>
+</section>
+<section id="helpful-reminder" class="level2">
+<h2 class="anchored" data-anchor-id="helpful-reminder">Helpful reminder</h2>
+<p>How to run python code in ArcGIS Pro python environment outside of ArcGIS Pro software?</p>
+<ol type="1">
+<li>Use the python command prompt</li>
+<li>Use cmd while using the following command before every python code</li>
+</ol>
+<p>call <code>%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy</code></p>
+</section>
+<section id="example-or-complementary-codes-or-files-included" class="level2">
+<h2 class="anchored" data-anchor-id="example-or-complementary-codes-or-files-included">Example or complementary codes or files included</h2>
+<p>Please note that all the example codes are not working at their original state as some parameters are left blank in them.</p>
+<ol type="1">
+<li><code>Auth_arcgis_locally.py</code>: Python scripts introduced in step 5 to store authentication locally.</li>
+<li><code>Auto_update_example.bat</code>: Bat file used at the end to automatically run multiple python files to update the hosted feature layer.</li>
+<li><code>DeveloperAPIGuides3_0.pdf</code>: API manual provided by the GNV RTS API. Please note that the commercial web link that can access the API is: "riderts.app".</li>
+<li><code>Download_request_example.py</code>: Python script to download all the bus locations with four artificial buses of four different occupancy levels and convert it into Geojson.</li>
+<li><code>gainData.ini</code>: configuration file that is used in the converter to help correctly convert the downloaded JSON file into proper Geojson.</li>
+<li><code>Invisible_mode_exxec.vbs</code>: Vbs file that used to execute <code>auto_update_example.bat</code> hiddenly (i.e., without any pop-up windows)</li>
+<li><code>OverwriteFS.zip</code>: Multiple python scripts provided by Esri. We only need to use the Json2GeoJSON.py and OverwriteFS.py inside. However, some functions inside are dependent on each other. Please unzip before use, don’t change the folder structure and don’t delete unused files inside.</li>
+</ol>
+<p>You can find them through this <a href="https://github.com/zehuiyin/digital_twin_UF_workflow">link</a>.</p>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ol type="1">
+<li>Esri_livefeeds. (2022). Overwrite Hosted Feature Services, v2.1.2. ArcGIS. <a href="https://www.arcgis.com/home/item.html?id=d45f80eb53c748e7aa3d938a46b48836">https://www.arcgis.com/home/item.html?id=d45f80eb53c748e7aa3d938a46b48836</a></li>
+<li>Gonzalo Espinoza. (2022). Schedule automated near real-time data updates. Learn ArcGIS. <a href="https://learn.arcgis.com/en/projects/schedule-automated-near-real-time-data-updates/">https://learn.arcgis.com/en/projects/schedule-automated-near-real-time-data-updates/</a></li>
+</ol>
+
+
+</section>
+
+ ]]></description>
+  <category>Digital twin</category>
+  <category>Real time</category>
+  <category>Web map</category>
+  <category>Gainesville</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2022-06-22-digital-twin-of-UF-campus/</guid>
+  <pubDate>Wed, 22 Jun 2022 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Map of Nanjing Tourist Attractions and Ticket Prices</title>
+  <dc:creator>Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_visualization/2021-04-20-Nanjing-Tourist-Attractions/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<div class="embed-container">
+<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Nanjing_tourist_attractions_and_ticket_prices_yinzehui" src="//utoronto.maps.arcgis.com/apps/Embed/index.html?webmap=868affdfefe14c28a7bb79b4e380fac3&amp;extent=118.7145,32.007,118.884,32.0928&amp;home=true&amp;zoom=true&amp;previewImage=false&amp;scale=true&amp;search=true&amp;searchextent=true&amp;legend=true&amp;basemap_gallery=true&amp;disable_scroll=false&amp;theme=light">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>The map showcases some of the most famous tourist attractions in Nanjing, the capital city of Jiangsu province, including their locations, ticket prices, national levels, and descriptions in attachments.</p>
+<p>Nanjing is a city with a rich history, having served as the capital city for six dynasties in the past. As a result, it is home to numerous old buildings, palaces, and city walls that attract tourists from all over the world. With this web map, tourists can easily access information about these famous attractions, helping them to better plan their trips and make the most of their time in Nanjing.</p>
+<p>I created this web map with the hope of attracting more people to visit Nanjing and learn about its fascinating history and culture. By providing useful information and making it easily accessible, I hope to encourage more people to explore this beautiful city and appreciate its unique charms.</p>
+
+
+
+ ]]></description>
+  <category>Nanjing</category>
+  <category>Web map</category>
+  <guid>https://zehuiyin.github.io/data_visualization/2021-04-20-Nanjing-Tourist-Attractions/</guid>
+  <pubDate>Tue, 20 Apr 2021 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_visualization/2021-04-20-Nanjing-Tourist-Attractions/thumbnail.png" medium="image" type="image/png" height="115" width="144"/>
+</item>
+</channel>
+</rss>

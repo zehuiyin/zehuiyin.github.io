@@ -1,0 +1,33 @@
+[
+  {
+    "listing": "/data_analysis.html",
+    "items": [
+      "/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/index.html",
+      "/data_analysis/2025-02-08-Loot-Box-Opening-Simulation/index.html",
+      "/data_analysis/2024-12-06-Food-Deserts-or-Food-Oases-Predicting-Grocery-Store-Locations-in-Hamilton-Ontario/index.html",
+      "/data_analysis/2024-04-10-Exploring-the-Relationship-Between-Bike-Theft-and-Police-Facility-Distance-in-Toronto/index.html",
+      "/data_analysis/2024-03-31-A-Catchment-Area-Analysis-of-The-Bike-Share-Toronto-System/index.html",
+      "/data_analysis/2023-12-02-package-sifr/index.html",
+      "/data_analysis/2023-11-17-Time-Series-OLS-Estimation-Bias/index.html",
+      "/data_analysis/2023-04-21-Travel-speed-and-routes-of-the-bike-share-system-An-analysis-of-Bike-Share-Toronto/index.html",
+      "/data_analysis/2022-12-13-A-taxonomy-of-Bike-Share-Toronto-stations/index.html",
+      "/data_analysis/2022-10-15-Semicircle-Problem-with-Simulation/index.html",
+      "/data_analysis/2021-11-03-Binary-and-Multinomial-Logistic-Regression/index.html"
+    ]
+  },
+  {
+    "listing": "/data_visualization.html",
+    "items": [
+      "/data_visualization/2024-11-03-Tissot-Circles/index.html",
+      "/data_visualization/2024-10-09-HSR-Realtime-Location/index.html",
+      "/data_visualization/2024-10-07-Hamilton-Demographics/index.html",
+      "/data_visualization/2023-11-17-Earthquake-Dashboard/index.html",
+      "/data_visualization/2023-11-15-Central-Limit-Theorem-Demonstration/index.html",
+      "/data_visualization/2023-08-06-Toronto-Bikeshare-Station-Web-Map/index.html",
+      "/data_visualization/2023-06-30-Toronto-Transit-Commission-Real-Time-Web-Map/index.html",
+      "/data_visualization/2023-06-26-Toronto-Bike-Share-Web-Map/index.html",
+      "/data_visualization/2022-06-22-digital-twin-of-UF-campus/index.html",
+      "/data_visualization/2021-04-20-Nanjing-Tourist-Attractions/index.html"
+    ]
+  }
+]
