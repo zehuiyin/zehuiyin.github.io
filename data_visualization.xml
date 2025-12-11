@@ -9,7 +9,7 @@
 <link>https://zehuiyin.github.io/data_visualization.html</link>
 <atom:link href="https://zehuiyin.github.io/data_visualization.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
-<generator>quarto-1.8.24</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Sun, 03 Nov 2024 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Tissot Circles in Different Coordinate Reference Systems</title>
