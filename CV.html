@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curriculum Vitae – Zehui Yin’s Personal Websites</title>
+<title>Curriculum Vitae – Zehui Yin’s Personal Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,10 +119,10 @@ Fix cookie consent window dark background in dark mode
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Curriculum Vitae – Zehui Yin’s Personal Websites">
+<meta property="og:title" content="Curriculum Vitae – Zehui Yin’s Personal Website">
 <meta property="og:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
-<meta property="og:site_name" content="Zehui Yin's Personal Websites">
-<meta name="twitter:title" content="Curriculum Vitae – Zehui Yin’s Personal Websites">
+<meta property="og:site_name" content="Zehui Yin's Personal Website">
+<meta name="twitter:title" content="Curriculum Vitae – Zehui Yin’s Personal Website">
 <meta name="twitter:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
 <meta name="twitter:site" content="@zehuiyin">
 <meta name="twitter:card" content="summary">
@@ -469,40 +469,27 @@ Fix cookie consent window dark background in dark mode
 </header>
 
 
-<style>
-.embed-container {
-    position: relative;
-    padding-bottom: 112%;
-    height: 0;
-    overflow: hidden;
-    max-width: 89%;
-}
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-@media screen and (max-width: 680px) {
-  #download_button {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-  }
-}
-</style>
-<div class="embed-container">
-<p><iframe frameborder="0" marginheight="0" marginwidth="0" title="CV" src="./files/CV.pdf#toolbar=0"></iframe></p>
+<!--
+  Cross-platform PDF embed: uses <object> with <iframe> fallback for
+  desktop browsers. On mobile (≤768px), the CSS in styles.css hides
+  the embed and shows a download/open prompt instead, because mobile
+  browsers (especially iOS Safari) cannot render inline PDFs.
+-->
+<div class="cv-embed-container">
+<p><object data="./files/CV.pdf#toolbar=0" type="application/pdf"> <iframe src="./files/CV.pdf#toolbar=0" title="Curriculum Vitae" style="border: none;"> </iframe> </object></p>
+</div>
+<!-- Mobile fallback: shown only on small screens via CSS -->
+<div class="cv-mobile-fallback">
+<p>
+<strong>PDF preview is not available on mobile devices.</strong>
+</p>
+<p>
+Please use the buttons below to view or download the CV.
+</p>
 </div>
  
 <p class="text-left">
-<a class="btn btn-primary btn-lg cv-open" href="./files/CV.pdf" target="_blank"> <i class="fa-solid fa-up-right-from-square"></i> Open in a new window </a>   <a id="download_button" class="btn btn-primary btn-lg cv-download" href="./files/CV.pdf" target="_blank" type="application/octet-stream" download="Zehui_Yin_CV.pdf"> <i class="fa-solid fa-file-arrow-down"></i> Download the latest CV </a>
+<a class="btn btn-primary btn-lg cv-open" href="./files/CV.pdf" target="_blank" rel="noopener"> <i class="fa-solid fa-up-right-from-square"></i> Open in a new window </a>   <a id="download_button" class="btn btn-primary btn-lg cv-download" href="./files/CV.pdf" target="_blank" type="application/octet-stream" download="Zehui_Yin_CV.pdf"> <i class="fa-solid fa-file-arrow-down"></i> Download the latest CV </a>
 </p>
 
 
@@ -927,7 +914,7 @@ Fix cookie consent window dark background in dark mode
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Updated: 2026-1
+ Updated: 2026-2
   </li>  
 </ul>
     </div>   

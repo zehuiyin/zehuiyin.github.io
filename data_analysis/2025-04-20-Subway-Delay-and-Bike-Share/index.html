@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-04-20">
 <meta name="description" content="This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.">
 
-<title>Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Websites</title>
+<title>Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,13 +151,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Websites">
+<meta property="og:title" content="Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Website">
 <meta property="og:description" content="This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.">
 <meta property="og:image" content="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png">
-<meta property="og:site_name" content="Zehui Yin's Personal Websites">
+<meta property="og:site_name" content="Zehui Yin's Personal Website">
 <meta property="og:image:height" content="847">
 <meta property="og:image:width" content="1281">
-<meta name="twitter:title" content="Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Websites">
+<meta name="twitter:title" content="Subway Delay and Bike Share Usage in Toronto – Zehui Yin’s Personal Website">
 <meta name="twitter:description" content="This analysis is part of the data analytic component for the 2025 ECCE App Challenge, Team Gearshift, conducted with Alice Stubbs and David Figueroa.">
 <meta name="twitter:image" content="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png">
 <meta name="twitter:site" content="@zehuiyin">
@@ -611,17 +611,17 @@ window.Quarto = {
 <p>The Shiny app below visualizes bike share ridership, subway delays, and traffic collisions. Click the image or follow this <a href="https://zehuiyin.shinyapps.io/app_challenge_2025/">link</a> to explore the interactive map.</p>
 <p><a href="https://zehuiyin.shinyapps.io/app_challenge_2025/"><img src="./thumbnail.png" class="img-fluid"></a></p>
 <p>The figures below illustrate the average temporal variations in the 3 variables across the hexagonal grid at 3-hour intervals.</p>
-<style>.embed-container {position: relative; padding-bottom: 50%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="bikeshare" src="https://app-challenge-25.pages.dev/bikeshare">
+<!-- Embed container CSS from styles.css -->
+<div class="embed-container ratio-map">
+<iframe title="Bikeshare temporal variation" src="https://app-challenge-25.pages.dev/bikeshare" loading="lazy">
 </iframe>
 </div>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="subway_delay" src="https://app-challenge-25.pages.dev/subway_delay">
+<div class="embed-container ratio-map">
+<iframe title="Subway delay temporal variation" src="https://app-challenge-25.pages.dev/subway_delay" loading="lazy">
 </iframe>
 </div>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="collision" src="https://app-challenge-25.pages.dev/collision">
+<div class="embed-container ratio-map">
+<iframe title="Collision temporal variation" src="https://app-challenge-25.pages.dev/collision" loading="lazy">
 </iframe>
 </div>
 </section>
@@ -667,8 +667,8 @@ window.Quarto = {
 <section id="scenario-simulation" class="level1">
 <h1>Scenario simulation</h1>
 <p>We conducted a scenario analysis where an additional 30-minute subway delay was introduced system-wide. The predicted bike share ridership increased significantly under this simulated disruption.</p>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="simulation" src="https://app-challenge-25.pages.dev/">
+<div class="embed-container ratio-map">
+<iframe title="Scenario simulation" src="https://app-challenge-25.pages.dev/" loading="lazy">
 </iframe>
 </div>
 </section>
@@ -1142,7 +1142,7 @@ window.Quarto = {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Updated: 2026-1
+ Updated: 2026-2
   </li>  
 </ul>
     </div>   

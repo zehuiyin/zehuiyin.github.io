@@ -9,7 +9,7 @@
 <meta name="author" content="Zehui Yin">
 <meta name="dcterms.date" content="2023-04-21">
 
-<title>Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto – Zehui Yin’s Personal Websites</title>
+<title>Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto – Zehui Yin’s Personal Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,13 +121,13 @@ Fix cookie consent window dark background in dark mode
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto – Zehui Yin’s Personal Websites">
+<meta property="og:title" content="Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto – Zehui Yin’s Personal Website">
 <meta property="og:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
 <meta property="og:image" content="https://zehuiyin.github.io/images/GGRC32_routing_workflow.png">
-<meta property="og:site_name" content="Zehui Yin's Personal Websites">
+<meta property="og:site_name" content="Zehui Yin's Personal Website">
 <meta property="og:image:height" content="1943">
 <meta property="og:image:width" content="3311">
-<meta name="twitter:title" content="Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto – Zehui Yin’s Personal Websites">
+<meta name="twitter:title" content="Travel Speed and Routes of the Bike-share System: An Analysis of Bike Share Toronto – Zehui Yin’s Personal Website">
 <meta name="twitter:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
 <meta name="twitter:image" content="https://zehuiyin.github.io/images/GGRC32_routing_workflow.png">
 <meta name="twitter:site" content="@zehuiyin">
@@ -510,10 +510,21 @@ Fix cookie consent window dark background in dark mode
 </ul>
 <p>To answer these two research questions, I simulated the shortest cycling paths between every pair of Toronto bike-share stations using the OpenStreetMap road network and the R5 routing engine. I estimated the average cycling speed within the system by calculating the seasonal average cycling speeds at each station. I also created the estimated travel flow by aggregating the simulated paths and visually comparing them with the existing bike lanes in Toronto. The project results showed that the average travelling speed in the bike-share system was at least 12 km/h and that the existing bike lanes did not complement the bike-share system well.</p>
 <p>You can find codes used in this project by clicking <a href="https://github.com/zehuiyin/travel_speed_and_routes_toronto_bikeshare" target="_blank">here</a>.</p>
-<embed src="../../files/routing_toronto_bikeshare.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="../../files/routing_toronto_bikeshare.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-tall">
+<object data="../../files/routing_toronto_bikeshare.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="../../files/routing_toronto_bikeshare.pdf" title="Toronto Bikeshare Routing Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
+<p>
+<a class="btn btn-primary" href="../../files/routing_toronto_bikeshare.pdf" target="_blank" rel="noopener">Open PDF</a>
+</p>
+</div>
+</div>
 
 
 
@@ -969,7 +980,7 @@ If the embedded PDF is not displayed properly, <a href="../../files/routing_toro
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Updated: 2026-1
+ Updated: 2026-2
   </li>  
 </ul>
     </div>   

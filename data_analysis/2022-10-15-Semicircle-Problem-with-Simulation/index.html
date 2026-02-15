@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2022-10-15">
 <meta name="description" content="This project involved simulating a scenario where four ducks were randomly and independently located in a circular pond. The goal was to determine the probability that all four ducks would be located within the same half of the circle.">
 
-<title>Semicircle Problem with Simulation – Zehui Yin’s Personal Websites</title>
+<title>Semicircle Problem with Simulation – Zehui Yin’s Personal Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,13 +157,13 @@ Fix cookie consent window dark background in dark mode
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Semicircle Problem with Simulation – Zehui Yin’s Personal Websites">
+<meta property="og:title" content="Semicircle Problem with Simulation – Zehui Yin’s Personal Website">
 <meta property="og:description" content="This project involved simulating a scenario where four ducks were randomly and independently located in a circular pond. The goal was to determine the probability that all four ducks would be located within the same half of the circle.">
 <meta property="og:image" content="https://zehuiyin.github.io/data_analysis/2022-10-15-Semicircle-Problem-with-Simulation/index_files/figure-html/unnamed-chunk-2-1.png">
-<meta property="og:site_name" content="Zehui Yin's Personal Websites">
+<meta property="og:site_name" content="Zehui Yin's Personal Website">
 <meta property="og:image:height" content="6000">
 <meta property="og:image:width" content="8400">
-<meta name="twitter:title" content="Semicircle Problem with Simulation – Zehui Yin’s Personal Websites">
+<meta name="twitter:title" content="Semicircle Problem with Simulation – Zehui Yin’s Personal Website">
 <meta name="twitter:description" content="This project involved simulating a scenario where four ducks were randomly and independently located in a circular pond. The goal was to determine the probability that all four ducks would be located within the same half of the circle.">
 <meta name="twitter:image" content="https://zehuiyin.github.io/data_analysis/2022-10-15-Semicircle-Problem-with-Simulation/index_files/figure-html/unnamed-chunk-2-1.png">
 <meta name="twitter:site" content="@zehuiyin">
@@ -582,7 +582,7 @@ Fix cookie consent window dark background in dark mode
 <p>Then we check for each set of points whether they fall within the same semicircle or not.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create variable to record the number of TRUE happens</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>count_ture <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>count_true <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  cond <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># check whether b, c, d falls within the semicircle created by a and origin (0,0)</span></span>
@@ -631,13 +631,13 @@ Fix cookie consent window dark background in dark mode
 <span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if any of the 4 conditions is met, then the four points are in the same semicircle</span></span>
 <span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (cond <span class="sc">&gt;=</span> <span class="dv">1</span>) {</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    count_ture <span class="ot">&lt;-</span> count_ture <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    count_true <span class="ot">&lt;-</span> count_true <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate the proportion</span></span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Proportion of four ducks fall within the same semicircle </span><span class="sc">\n</span><span class="st">with"</span>, n,</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">"simulations equals ="</span>, count_ture<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>n, <span class="st">"%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">"simulations equals ="</span>, count_true<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>n, <span class="st">"%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Proportion of four ducks fall within the same semicircle 
 with 10000 simulations equals = 50.82 %</code></pre>
@@ -650,7 +650,7 @@ with 10000 simulations equals = 50.82 %</code></pre>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  b <span class="ot">&lt;-</span> <span class="fu">generate_point_in_circle</span>(n, <span class="dv">1</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  c <span class="ot">&lt;-</span> <span class="fu">generate_point_in_circle</span>(n, <span class="dv">1</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  d <span class="ot">&lt;-</span> <span class="fu">generate_point_in_circle</span>(n, <span class="dv">1</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  count_ture <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  count_true <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    cond <span class="ot">&lt;-</span> <span class="dv">0</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check whether b, c, d falls within the semicircle created by a and origin (0,0)</span></span>
@@ -699,10 +699,10 @@ with 10000 simulations equals = 50.82 %</code></pre>
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if any of the 4 conditions is met, then the four points are in the same semicircle</span></span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (cond <span class="sc">&gt;=</span> <span class="dv">1</span>) {</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>      count_ture <span class="ot">&lt;-</span> count_ture <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>      count_true <span class="ot">&lt;-</span> count_true <span class="sc">+</span> <span class="dv">1</span></span>
 <span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count_ture<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>n)</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(count_true<span class="sc">*</span><span class="dv">100</span><span class="sc">/</span>n)</span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Use parallel package to do parallel computing with the function. Like above, still simulate for 10000 times.</p>
@@ -1191,7 +1191,7 @@ with 10000 simulations equals = 50.82 %</code></pre>
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Updated: 2026-1
+ Updated: 2026-2
   </li>  
 </ul>
     </div>   

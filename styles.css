@@ -1,1 +1,183 @@
 /* css styles */
+
+/* ============================================================
+   Responsive embed container (iframes, web apps, maps)
+   Used across multiple pages — centralized here to avoid
+   duplicated inline <style> blocks.
+   Modifier classes control aspect ratio per use case.
+   ============================================================ */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%; /* default 16:9 aspect ratio */
+  height: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* replaces deprecated frameborder="0" */
+}
+
+/* Aspect ratio modifiers */
+.embed-container.ratio-4x3 {
+  padding-bottom: 75%;
+}
+
+.embed-container.ratio-1x1 {
+  padding-bottom: 100%;
+}
+
+.embed-container.ratio-map {
+  padding-bottom: 50%; /* for location maps */
+}
+
+.embed-container.ratio-tall {
+  padding-bottom: 80%; /* for taller web apps and maps */
+}
+
+.embed-container.ratio-short {
+  padding-bottom: 45%; /* for shorter apps */
+}
+
+/* ============================================================
+   Cross-platform PDF viewer
+   Uses <object> with <iframe> fallback. On mobile/iOS where
+   PDF rendering is unsupported, a styled download/open prompt
+   is shown instead via the .pdf-fallback block.
+   ============================================================ */
+.pdf-viewer-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  --pdf-height: clamp(22rem, 70vh, 52rem); /* Responsive height using viewport units */
+}
+
+.pdf-viewer-container object,
+.pdf-viewer-container iframe {
+  width: 100%;
+  height: var(--pdf-height);
+  border: none;
+  border-radius: 0;
+}
+
+/* Size modifiers for different PDF content types */
+.pdf-viewer-container.pdf-short {
+  --pdf-height: clamp(20rem, 45vh, 45rem); /* For shorter PDFs like posters */
+}
+
+.pdf-viewer-container.pdf-tall {
+  --pdf-height: clamp(45rem, 90vh, 80rem); /* For longer PDFs like full reports */
+}
+
+/* Fallback message shown when PDF can't render (mobile/iOS) */
+.pdf-fallback {
+  display: none;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--bs-body-color, #212529);
+  background-color: var(--bs-light, rgba(127, 127, 127, 0.12));
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.pdf-fallback p {
+  margin-bottom: 0.5rem;
+}
+
+/* On small screens / touch devices, hide <object>/<iframe> PDF
+   and show the fallback download prompt instead */
+@media screen and (max-width: 768px) {
+  .pdf-viewer-container object,
+  .pdf-viewer-container iframe.pdf-embed {
+    display: none;
+  }
+  .pdf-fallback {
+    display: block;
+  }
+}
+
+/* ============================================================
+   CV page — embed container & button responsiveness
+   ============================================================ */
+.cv-embed-container {
+  position: relative;
+  padding-bottom: 112%;
+  height: 0;
+  overflow: hidden;
+  max-width: 89%;
+}
+
+.cv-embed-container object,
+.cv-embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Theme-aware mobile fallback for CV page */
+.cv-mobile-fallback {
+  display: none;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--bs-body-color, #212529);
+  background-color: var(--bs-light, rgba(127, 127, 127, 0.12));
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Hide download button on very small screens */
+@media screen and (max-width: 680px) {
+  #download_button {
+    display: none;
+  }
+  .cv-embed-container {
+    display: none;
+  }
+  .cv-mobile-fallback {
+    display: block !important;
+  }
+}
+
+/* ============================================================
+   General responsive & typography polish
+   ============================================================ */
+
+/* Ensure images don't overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve readability of long-form text on wide screens */
+.quarto-body-content p {
+  line-height: 1.7;
+}
+
+/* Smooth scrolling for same-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better table responsiveness */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure callout content doesn't overflow on small screens */
+.callout-body-container {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}

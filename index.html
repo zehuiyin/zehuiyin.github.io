@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About Me – Zehui Yin’s Personal Websites</title>
+<title>About Me – Zehui Yin’s Personal Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,14 +119,14 @@ Fix cookie consent window dark background in dark mode
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="About Me – Zehui Yin’s Personal Websites">
+<meta property="og:title" content="About Me – Zehui Yin’s Personal Website">
 <meta property="og:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
 <meta property="og:image" content="https://zehuiyin.github.io/images/Headshot.png">
-<meta property="og:site_name" content="Zehui Yin's Personal Websites">
+<meta property="og:site_name" content="Zehui Yin's Personal Website">
 <meta property="og:image:alt" content="Portrait of Zehui Yin">
 <meta property="og:image:height" content="2814">
 <meta property="og:image:width" content="2484">
-<meta name="twitter:title" content="About Me – Zehui Yin’s Personal Websites">
+<meta name="twitter:title" content="About Me – Zehui Yin’s Personal Website">
 <meta name="twitter:description" content="This is Zehui Yin’s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.">
 <meta name="twitter:image" content="https://zehuiyin.github.io/images/Headshot.png">
 <meta name="twitter:site" content="@zehuiyin">
@@ -488,16 +488,22 @@ Fix cookie consent window dark background in dark mode
 }
 
 #myBtn {
-  background-color: none;
+  background-color: transparent;
   border: none;
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   padding: 0px 0px;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
   display: inline-block;
 }
+
+#myBtn:hover {
+  opacity: 0.7;
+}
 </style>
-<audio id="pronunciation" src="audios/zehuiyin.mp3">
+<!-- preload=none avoids downloading audio until user clicks play -->
+<audio id="pronunciation" src="audios/zehuiyin.mp3" preload="none">
 </audio>
 <p><img id="headshot" width="248.4" height="281.4" src="images/Headshot.png" style="vertical-align: middle;margin: 0px 15px 0px 0px;float: left;border-radius: 5%;" alt="Portrait of Zehui Yin"></p>
 <!---
@@ -539,10 +545,10 @@ Moreover, as a passionate transit enthusiast, I find myself constantly drawn to 
 <h2 class="anchored" data-anchor-id="get-in-touch">Get in Touch</h2>
 <p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:yinz39@mcmaster.ca">yinz39@mcmaster.ca</a></p>
 <p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:zehuiyin@gmail.com">zehuiyin@gmail.com</a></p>
-<p><i class="fa-solid fa-location-dot" aria-label="location-dot"></i><img src="" style="margin-right: 4.41px"> <a href="https://maps.app.goo.gl/7x2HZ5gF5hgCy6u17">TransLAB (Transportation Research Lab), Burke Science Building (BSB), Room 308, 1280 Main Street West, Hamilton, Ontario L8S 4K1, Canada</a></p>
-<style>.embed-container {position: relative; padding-bottom: 50%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Location_Map" src="https://zehuiyin.github.io/mac_location/">
+<p><i class="fa-solid fa-location-dot" aria-label="location-dot"></i><span style="margin-right: 4.41px"></span> <a href="https://maps.app.goo.gl/7x2HZ5gF5hgCy6u17">TransLAB (Transportation Research Lab), Burke Science Building (BSB), Room 308, 1280 Main Street West, Hamilton, Ontario L8S 4K1, Canada</a></p>
+<!-- Location map embed (CSS from styles.css) -->
+<div class="embed-container ratio-map">
+<iframe title="Location Map" src="https://zehuiyin.github.io/mac_location/" loading="lazy">
 </iframe>
 </div>
 <!---
@@ -1008,7 +1014,7 @@ function toggleAudio() {
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Updated: 2026-1
+ Updated: 2026-2
   </li>  
 </ul>
     </div>   

@@ -5,7 +5,7 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Zehui Yin&#39;s Personal Websites</title>
+<title>Zehui Yin&#39;s Personal Website</title>
 <link>https://zehuiyin.github.io/data_analysis.html</link>
 <atom:link href="https://zehuiyin.github.io/data_analysis.xml" rel="self" type="application/rss+xml"/>
 <description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
@@ -89,17 +89,17 @@
 <p>The Shiny app below visualizes bike share ridership, subway delays, and traffic collisions. Click the image or follow this <a href="https://zehuiyin.shinyapps.io/app_challenge_2025/">link</a> to explore the interactive map.</p>
 <p><a href="https://zehuiyin.shinyapps.io/app_challenge_2025/"><img src="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png" class="img-fluid"></a></p>
 <p>The figures below illustrate the average temporal variations in the 3 variables across the hexagonal grid at 3-hour intervals.</p>
-<style>.embed-container {position: relative; padding-bottom: 50%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="bikeshare" src="https://app-challenge-25.pages.dev/bikeshare">
+<!-- Embed container CSS from styles.css -->
+<div class="embed-container ratio-map">
+<iframe title="Bikeshare temporal variation" src="https://app-challenge-25.pages.dev/bikeshare" loading="lazy">
 </iframe>
 </div>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="subway_delay" src="https://app-challenge-25.pages.dev/subway_delay">
+<div class="embed-container ratio-map">
+<iframe title="Subway delay temporal variation" src="https://app-challenge-25.pages.dev/subway_delay" loading="lazy">
 </iframe>
 </div>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="collision" src="https://app-challenge-25.pages.dev/collision">
+<div class="embed-container ratio-map">
+<iframe title="Collision temporal variation" src="https://app-challenge-25.pages.dev/collision" loading="lazy">
 </iframe>
 </div>
 </section>
@@ -145,8 +145,8 @@
 <section id="scenario-simulation" class="level1">
 <h1>Scenario simulation</h1>
 <p>We conducted a scenario analysis where an additional 30-minute subway delay was introduced system-wide. The predicted bike share ridership increased significantly under this simulated disruption.</p>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="simulation" src="https://app-challenge-25.pages.dev/">
+<div class="embed-container ratio-map">
+<iframe title="Scenario simulation" src="https://app-challenge-25.pages.dev/" loading="lazy">
 </iframe>
 </div>
 </section>
@@ -187,9 +187,9 @@
 
 
 <p>This Shiny app is built using Shinylive, which allows it to run entirely on the frontend without the need for a server. However, this also means that it may take some time to load in the web browser.</p>
-<style>.embed-container {position: relative; padding-bottom: 45%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
-<div class="embed-container">
-<iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Location_Map" src="https://zehuiyin.github.io/lootbox_simulation/">
+<!-- Embed container CSS from styles.css -->
+<div class="embed-container ratio-short">
+<iframe title="Loot Box Opening Simulation" src="https://zehuiyin.github.io/lootbox_simulation/" loading="lazy">
 </iframe>
 </div>
 <p style="margin-bottom:0.8cm;">
@@ -234,10 +234,21 @@
 <li>What areas in Hamilton have more or fewer grocery stores compared to other areas?</li>
 </ul>
 <p>You can find the code used in this project by clicking <a href="https://github.com/zehuiyin/grocery_store_hamilton">here</a>, and the data used in this project packaged into an R package <a href="https://github.com/zehuiyin/GroceryStoreHamiltonData">here</a>.</p>
-<embed src="../../files/grocery_store_hamilton.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="../../files/grocery_store_hamilton.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-tall">
+<object data="../../files/grocery_store_hamilton.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="../../files/grocery_store_hamilton.pdf" title="Grocery Store Hamilton Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
+<p>
+<a class="btn btn-primary" href="../../files/grocery_store_hamilton.pdf" target="_blank" rel="noopener">Open PDF</a>
+</p>
+</div>
+</div>
 
 
 
@@ -279,10 +290,21 @@ If the embedded PDF is not displayed properly, <a href="../../files/grocery_stor
 <li><p>Upon observing a deterrent effect, to what extent does the proximity of police facilities causally mitigate bike theft incidents in Toronto?</p></li>
 </ol>
 <p>You can find the code used in this project by clicking <a href="https://github.com/zehuiyin/bike_theft_and_police_stations">here</a>.</p>
-<embed src="../../files/bike_theft_police_station.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="../../files/bike_theft_police_station.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-tall">
+<object data="../../files/bike_theft_police_station.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="../../files/bike_theft_police_station.pdf" title="Bike Theft and Police Station Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
+<p>
+<a class="btn btn-primary" href="../../files/bike_theft_police_station.pdf" target="_blank" rel="noopener">Open PDF</a>
+</p>
+</div>
+</div>
 
 
 
@@ -323,14 +345,35 @@ If the embedded PDF is not displayed properly, <a href="../../files/bike_theft_p
 <li><p>Which Bike Share Toronto service areas have higher or lower levels of equity, and where should the system expansion be prioritized to improve the service provision equity?</p></li>
 </ol>
 <p>You can find the code used in this project by clicking <a href="https://github.com/zehuiyin/bikeshareTO_equity_analysis">here</a> and the online dashboard through this <a href="https://zehuiyin.github.io/bikeshareTO_equity_analysis/">link</a>.</p>
-<embed src="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Poster/Poster.pdf" width="100%" height="700px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Poster/Poster.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-short">
+<object data="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Poster/Poster.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Poster/Poster.pdf" title="Bikeshare Equity Poster" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
-<embed src="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Report/Report.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Report/Report.pdf" target="_blank">please click here.</a>
+<p>
+<a class="btn btn-primary" href="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Poster/Poster.pdf" target="_blank" rel="noopener">Open Poster PDF</a>
 </p>
+</div>
+</div>
+<div class="pdf-viewer-container pdf-tall">
+<object data="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Report/Report.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Report/Report.pdf" title="Bikeshare Equity Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
+</p>
+<p>
+<a class="btn btn-primary" href="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Report/Report.pdf" target="_blank" rel="noopener">Open Report PDF</a>
+</p>
+</div>
+</div>
 
 
 
@@ -1734,10 +1777,21 @@ font-style: inherit;">0.5</span>))</span></code></pre></div></div>
 </ul>
 <p>To answer these two research questions, I simulated the shortest cycling paths between every pair of Toronto bike-share stations using the OpenStreetMap road network and the R5 routing engine. I estimated the average cycling speed within the system by calculating the seasonal average cycling speeds at each station. I also created the estimated travel flow by aggregating the simulated paths and visually comparing them with the existing bike lanes in Toronto. The project results showed that the average travelling speed in the bike-share system was at least 12 km/h and that the existing bike lanes did not complement the bike-share system well.</p>
 <p>You can find codes used in this project by clicking <a href="https://github.com/zehuiyin/travel_speed_and_routes_toronto_bikeshare" target="_blank">here</a>.</p>
-<embed src="../../files/routing_toronto_bikeshare.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="../../files/routing_toronto_bikeshare.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-tall">
+<object data="../../files/routing_toronto_bikeshare.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="../../files/routing_toronto_bikeshare.pdf" title="Toronto Bikeshare Routing Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
+<p>
+<a class="btn btn-primary" href="../../files/routing_toronto_bikeshare.pdf" target="_blank" rel="noopener">Open PDF</a>
+</p>
+</div>
+</div>
 
 
 
@@ -1774,10 +1828,21 @@ If the embedded PDF is not displayed properly, <a href="../../files/routing_toro
 <p>The second research question aimed to identify similarities and differences between the various bike-share stations in Toronto. The project analyzed a range of factors, including location, trip count percentages, built environments, and social demographics, to provide a taxonomy of the stations.</p>
 <p>The project highlights the potential of GIS tools and techniques in analyzing and understanding complex spatial patterns and relationships. Through the analysis of the Bike Share Toronto system, the project provides valuable insights into the characteristics of the system and the factors that influence bike-share usage in the city.</p>
 <p>You can find codes used in this project by clicking <a href="https://github.com/zehuiyin/cluster_analysis_toronto_bikeshare" target="_blank">here</a>.</p>
-<embed src="../../files/Bikeshare_Toronto.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="../../files/Bikeshare_Toronto.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-tall">
+<object data="../../files/Bikeshare_Toronto.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="../../files/Bikeshare_Toronto.pdf" title="Bikeshare Toronto Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
+<p>
+<a class="btn btn-primary" href="../../files/Bikeshare_Toronto.pdf" target="_blank" rel="noopener">Open PDF</a>
+</p>
+</div>
+</div>
 
 
 
@@ -2051,7 +2116,7 @@ font-style: inherit;">"y"</span>)</span></code></pre></div></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># create variable to record the number of TRUE happens</span></span>
-<span id="cb3-2">count_ture <span class="ot" style="color: #003B4F;
+<span id="cb3-2">count_true <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2671,9 +2736,9 @@ background-color: null;
 font-style: inherit;">&gt;=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>) {</span>
-<span id="cb3-51">    count_ture <span class="ot" style="color: #003B4F;
+<span id="cb3-51">    count_true <span class="ot" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">&lt;-</span> count_ture <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">&lt;-</span> count_true <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2695,7 +2760,7 @@ background-color: null;
 font-style: inherit;">with"</span>, n,</span>
 <span id="cb3-57">    <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"simulations equals ="</span>, count_ture<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"simulations equals ="</span>, count_true<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2745,7 +2810,7 @@ background-color: null;
 font-style: inherit;">generate_point_in_circle</span>(n, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
-<span id="cb5-6">  count_ture <span class="ot" style="color: #003B4F;
+<span id="cb5-6">  count_true <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -3365,9 +3430,9 @@ background-color: null;
 font-style: inherit;">&gt;=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>) {</span>
-<span id="cb5-55">      count_ture <span class="ot" style="color: #003B4F;
+<span id="cb5-55">      count_true <span class="ot" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">&lt;-</span> count_ture <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">&lt;-</span> count_true <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -3376,7 +3441,7 @@ font-style: inherit;">1</span></span>
 <span id="cb5-57">  }</span>
 <span id="cb5-58">  <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">return</span>(count_ture<span class="sc" style="color: #5E5E5E;
+font-style: inherit;">return</span>(count_true<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -3551,10 +3616,21 @@ font-style: inherit;">"lightblue"</span>)</span></code></pre></div></div>
 <p>This project was inspired by an assignment for <a href="https://utsc.calendar.utoronto.ca/course/ggrc42h3">GGRC42</a>, a course taught by <a href="https://www.utsc.utoronto.ca/geography/steven-farber">Dr.&nbsp;Steven Farber</a> in the fall of 2021. The main focus of the project was to develop binary and multinomial logistic regression models for two datasets, one of which was the well-known iris dataset.</p>
 <p>By fitting these models, I was able to draw useful insights and provide explanations and interpretations of the results. Through this project, I aimed to showcase my skills in data analysis and modeling and demonstrate my understanding of logistic regression.</p>
 <p>The use of binary and multinomial logistic regression models allowed for the analysis of data with two or more outcome categories, which is particularly useful in many fields, including medicine, social sciences, and marketing. By applying these models to real-world datasets, I was able to gain practical experience in the field of data analysis.</p>
-<embed src="../../files/Logistic_Regression.pdf" width="100%" height="800px">
-<p style="text-align: left;">
-If the embedded PDF is not displayed properly, <a href="../../files/Logistic_Regression.pdf" target="_blank">please click here.</a>
+<!-- Cross-platform PDF: <object> for desktop, mobile fallback via CSS -->
+<div class="pdf-viewer-container pdf-tall">
+<object data="../../files/Logistic_Regression.pdf" type="application/pdf">
+<iframe class="pdf-embed" src="../../files/Logistic_Regression.pdf" title="Logistic Regression Report" style="border: none;">
+</iframe>
+</object>
+<div class="pdf-fallback">
+<p>
+PDF preview is not available on this device.
 </p>
+<p>
+<a class="btn btn-primary" href="../../files/Logistic_Regression.pdf" target="_blank" rel="noopener">Open PDF</a>
+</p>
+</div>
+</div>
 
 
 
