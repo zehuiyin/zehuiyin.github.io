@@ -138,7 +138,7 @@
 }
 
 /* Hide download button on very small screens */
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 768px) {
   #download_button {
     display: none;
   }
@@ -146,7 +146,7 @@
     display: none;
   }
   .cv-mobile-fallback {
-    display: block !important;
+    display: block;
   }
 }
 
