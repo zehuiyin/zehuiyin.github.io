@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Data Analysis  – Zehui Yin's Personal Website</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -37,19 +40,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b7e9d026a7057f9c7db5de69bd565a73.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d906055fc5c7306759ceb0bb8b7aefec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8e969178034f1edb09cc200d4408d55c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-d906055fc5c7306759ceb0bb8b7aefec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3d7be4ffdb56539c84502a76aecf6368.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e3dfc84ef1a922b8d395a96937061ea1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-3d7be4ffdb56539c84502a76aecf6368.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -149,7 +151,7 @@ Fix cookie consent window dark background in dark mode
 </style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -181,7 +183,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Zehui Yin's Personal Website" href="data_analysis.xml" data-external="1"><meta property="og:title" content="Data Analysis  – Zehui Yin’s Personal Website">
 <meta property="og:image" content="https://zehuiyin.github.io/data_analysis/2025-04-20-Subway-Delay-and-Bike-Share/thumbnail.png">
-<meta property="og:site_name" content="Zehui Yin's Personal Website">
+<meta property="og:site_name" content="Zehui Yin’s Personal Website">
 <meta property="og:image:height" content="847">
 <meta property="og:image:width" content="1281">
 <meta name="twitter:title" content="Data Analysis  – Zehui Yin’s Personal Website">
@@ -626,7 +628,7 @@ Feb 8, 2025
 <div class="quarto-post image-right" data-index="2" data-categories="SGFtaWx0b24lMkNHcm9jZXJ5JTIwc3RvcmUlMkNMaW5lYXIlMjByZWdyZXNzaW9uJTJDUiUyMHBhY2thZ2U=" data-listing-date-sort="1733461200000" data-listing-file-modified-sort="1771194241846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="251">
 <div class="thumbnail"><a href="./data_analysis/2024-12-06-Food-Deserts-or-Food-Oases-Predicting-Grocery-Store-Locations-in-Hamilton-Ontario/index.html" class="no-external">
 
-<p class="card-img-top"><img src="data_analysis\2024-12-06-Food-Deserts-or-Food-Oases-Predicting-Grocery-Store-Locations-in-Hamilton-Ontario\thumbnail.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="data_analysis\2024-12-06-Food-Deserts-or-Food-Oases-Predicting-Grocery-Store-Locations-in-Hamilton-Ontario\thumbnail.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -659,7 +661,7 @@ Dec 6, 2024
 <div class="quarto-post image-right" data-index="3" data-categories="VG9yb250byUyQ0NyaW1lJTJDTGluZWFyJTIwcmVncmVzc2lvbg==" data-listing-date-sort="1712721600000" data-listing-file-modified-sort="1771194241846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="299">
 <div class="thumbnail"><a href="./data_analysis/2024-04-10-Exploring-the-Relationship-Between-Bike-Theft-and-Police-Facility-Distance-in-Toronto/index.html" class="no-external">
 
-<p class="card-img-top"><img src="data_analysis\2024-04-10-Exploring-the-Relationship-Between-Bike-Theft-and-Police-Facility-Distance-in-Toronto\thumbnail.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="data_analysis\2024-04-10-Exploring-the-Relationship-Between-Bike-Theft-and-Police-Facility-Distance-in-Toronto\thumbnail.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -690,7 +692,7 @@ Apr 10, 2024
 <div class="quarto-post image-right" data-index="4" data-categories="VG9yb250byUyQ0Jpa2VzaGFyZSUyQ1NwYXRpYWwlMjBhbmFseXNpcw==" data-listing-date-sort="1711857600000" data-listing-file-modified-sort="1771194241843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="330">
 <div class="thumbnail"><a href="./data_analysis/2024-03-31-A-Catchment-Area-Analysis-of-The-Bike-Share-Toronto-System/index.html" class="no-external">
 
-<p class="card-img-top"><img src="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Graphs/Workflow.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="https://zehuiyin.github.io/bikeshareTO_equity_analysis/Graphs/Workflow.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -750,7 +752,7 @@ Dec 2, 2023
 <div class="quarto-post image-right" data-index="6" data-categories="U2ltdWxhdGlvbiUyQ0xpbmVhciUyMHJlZ3Jlc3Npb24=" data-listing-date-sort="1700197200000" data-listing-file-modified-sort="1757985949638" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="800">
 <div class="thumbnail"><a href="./data_analysis/2023-11-17-Time-Series-OLS-Estimation-Bias/index.html" class="no-external">
 
-<p class="card-img-top"><img src="data_analysis\2023-11-17-Time-Series-OLS-Estimation-Bias\index_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="data_analysis\2023-11-17-Time-Series-OLS-Estimation-Bias\index_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -779,7 +781,7 @@ Nov 17, 2023
 <div class="quarto-post image-right" data-index="7" data-categories="VG9yb250byUyQ0Jpa2VzaGFyZSUyQ1NwYXRpYWwlMjBhbmFseXNpcyUyQ1JvdXRpbmc=" data-listing-date-sort="1682049600000" data-listing-file-modified-sort="1771194241843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="221">
 <div class="thumbnail"><a href="./data_analysis/2023-04-21-Travel-speed-and-routes-of-the-bike-share-system-An-analysis-of-Bike-Share-Toronto/index.html" class="no-external">
 
-<p class="card-img-top"><img src="images\GGRC32_routing_workflow.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="images\GGRC32_routing_workflow.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -812,7 +814,7 @@ Apr 21, 2023
 <div class="quarto-post image-right" data-index="8" data-categories="VG9yb250byUyQ0Jpa2VzaGFyZSUyQ1NwYXRpYWwlMjBhbmFseXNpcyUyQ0NsdXN0ZXIlMjBhbmFseXNpcw==" data-listing-date-sort="1670907600000" data-listing-file-modified-sort="1771194241843" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="271">
 <div class="thumbnail"><a href="./data_analysis/2022-12-13-A-taxonomy-of-Bike-Share-Toronto-stations/index.html" class="no-external">
 
-<p class="card-img-top"><img src="images\GGRC30_workflow_chart.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="images\GGRC30_workflow_chart.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -845,7 +847,7 @@ Dec 13, 2022
 <div class="quarto-post image-right" data-index="9" data-categories="U2ltdWxhdGlvbg==" data-listing-date-sort="1665806400000" data-listing-file-modified-sort="1771194284203" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1353">
 <div class="thumbnail"><a href="./data_analysis/2022-10-15-Semicircle-Problem-with-Simulation/index.html" class="no-external">
 
-<p class="card-img-top"><img src="data_analysis\2022-10-15-Semicircle-Problem-with-Simulation\index_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
+<p class="card-img-top"><img loading='lazy' src="data_analysis\2022-10-15-Semicircle-Problem-with-Simulation\index_files\figure-html\unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
