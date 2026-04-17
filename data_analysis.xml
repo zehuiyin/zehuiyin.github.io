@@ -8,9 +8,43 @@
 <title>Zehui Yin&#39;s Personal Website</title>
 <link>https://zehuiyin.github.io/data_analysis.html</link>
 <atom:link href="https://zehuiyin.github.io/data_analysis.xml" rel="self" type="application/rss+xml"/>
-<description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and latest CV. The website is built with Quarto.</description>
-<generator>quarto-1.9.29</generator>
-<lastBuildDate>Sun, 20 Apr 2025 04:00:00 GMT</lastBuildDate>
+<description>This is Zehui Yin&#39;s personal website. He updates it regularly to post some of his selected projects and the latest CV. The website is built with Quarto.</description>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Fri, 17 Apr 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Toronto-Hamilton MedBridge</title>
+  <dc:creator>Sarah Paquin, Skyler Grasley, and Zehui Yin</dc:creator>
+  <link>https://zehuiyin.github.io/data_analysis/2026-04-17-Toronto-Hamilton-MedBridge/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<!-- Embed container CSS from styles.css -->
+<div class="embed-container ratio-tall">
+<iframe title="Toronto-Hamilton MedBridge app" src="https://esricanada-ce.github.io/ecce-app-challenge-2026/Mapping_Marauders/app/" loading="lazy">
+</iframe>
+</div>
+<p style="margin-bottom:0.8cm;">
+</p>
+<p>As part of the 2026 ECCE App Challenge, our team, <strong>Mapping Marauders</strong>, developed <strong>Toronto-Hamilton MedBridge</strong>, an application that examines how sustainable transportation shapes access to healthcare across two major Ontario cities. The project grew from a simple but important question: if hospitals and clinics are concentrated in urban areas, how easy is it to reach them without relying entirely on a private car? Rather than treating transportation and healthcare as separate systems, we approached them as one accessibility problem.</p>
+<p>The method is centered on travel time. We first defined the study area using the municipal boundaries of Toronto and Hamilton, then generated an H3 hexagonal grid at resolution 9 across the land area. Each hexagon centroid served as an origin point, which gave us a spatially consistent way to compare accessibility from one neighborhood to another. On the destination side, hospital and clinic locations from OpenStreetMap were merged into a single opportunity layer and converted into representative point features.</p>
+<p>From there, we built a multimodal transport network by combining the OpenStreetMap street network with scheduled transit service from the Toronto Transit Commission and Hamilton Street Railway. This allowed us to evaluate not only conventional transit access, but also a more flexible sustainable mobility scenario. During the analysis stage, we compared two assumptions: transit plus walking only, and cycling plus transit, where cycling could be used for both access and egress segments. In the published app, however, we chose to display the cycling-plus-transit results for hospitals and clinics rather than showing both scenarios side by side.</p>
+<p>To make the analysis more realistic, accessibility was evaluated under four departure conditions: weekday peak, weekday off-peak, weekend peak, and weekend off-peak. Travel times were then translated into accessibility scores using a bisquare distance-decay function. In practice, this means nearby healthcare opportunities contribute much more strongly than distant ones, while trips longer than 60 minutes receive no weight at all. This framework moves the analysis beyond a simple nearest-hospital measure and instead captures the cumulative level of healthcare access available from each location.</p>
+<p>Finally, we generated isochrone polygons for hospitals and clinics so the results could be interpreted visually in the web app. The final product focuses on where cycling paired with transit produces stronger healthcare access, where those connections remain limited, and how far that combined network extends across the Toronto-Hamilton region.</p>
+<p>Explore the <a href="https://esricanada-ce.github.io/ecce-app-challenge-2026/Mapping_Marauders/app/">interactive app in full screen</a> or view the <a href="https://github.com/EsriCanada-CE/ecce-app-challenge-2026/tree/gh-pages/Mapping_Marauders">project source code</a>.</p>
+
+
+
+ ]]></description>
+  <category>Toronto</category>
+  <category>Hamilton</category>
+  <category>Accessibility</category>
+  <guid>https://zehuiyin.github.io/data_analysis/2026-04-17-Toronto-Hamilton-MedBridge/</guid>
+  <pubDate>Fri, 17 Apr 2026 04:00:00 GMT</pubDate>
+  <media:content url="https://zehuiyin.github.io/data_analysis/2026-04-17-Toronto-Hamilton-MedBridge/thumbnail.png" medium="image" type="image/png" height="72" width="144"/>
+</item>
 <item>
   <title>Subway Delay and Bike Share Usage in Toronto</title>
   <dc:creator>Zehui Yin</dc:creator>
