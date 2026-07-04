@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../favicon.png" rel="icon" type="image/png">
+<link href="../../favicon.ico" rel="icon">
 <script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -109,6 +109,140 @@ cookieconsent.run({
 });
 </script> 
   
+<link rel="icon" href="favicon-light.png" type="image/png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="favicon-dark.png" type="image/png" media="(prefers-color-scheme: dark)">
+<script>
+  (function () {
+    var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function faviconPath(fileName) {
+      // Quarto sets this offset per page, so nested pages can still find root assets.
+      var offsetMeta = document.querySelector('meta[name="quarto:offset"]');
+      var offset = offsetMeta ? offsetMeta.content : "./";
+      return offset + fileName + "?v=20260704";
+    }
+
+    function quartoPrefersDark() {
+      // The rendered page state is the strongest signal, including local file previews.
+      if (document.body && document.body.classList.contains("quarto-dark")) {
+        return true;
+      }
+
+      if (document.body && document.body.classList.contains("quarto-light")) {
+        return false;
+      }
+
+      // Before body classes are available, infer mode from Quarto's active stylesheet.
+      var activeBootstrap = document.querySelector('link#quarto-bootstrap:not([rel="disabled-stylesheet"])');
+
+      if (activeBootstrap) {
+        return activeBootstrap.getAttribute("data-mode") === "dark";
+      }
+
+      try {
+        var storedScheme = window.localStorage.getItem("quarto-color-scheme");
+
+        if (storedScheme === "alternate") {
+          return true;
+        }
+
+        if (storedScheme === "default") {
+          return false;
+        }
+      } catch (error) {
+        // Fall back to the system preference when localStorage is unavailable.
+      }
+
+      return darkQuery.matches;
+    }
+
+    function updateDynamicFavicon() {
+      window.setTimeout(setDynamicFavicon, 0);
+    }
+
+    function setDynamicFavicon() {
+      var href = faviconPath(quartoPrefersDark() ? "favicon-dark.png" : "favicon-light.png");
+      var managedIcon = document.querySelector('link[data-dynamic-favicon="active"]');
+
+      if (!managedIcon) {
+        managedIcon = document.createElement("link");
+        managedIcon.rel = "icon";
+        managedIcon.type = "image/png";
+        managedIcon.dataset.dynamicFavicon = "active";
+        document.head.appendChild(managedIcon);
+      }
+
+      managedIcon.href = href;
+    }
+
+    function patchQuartoToggle() {
+      // Quarto defines the toggle later in the body; wrap it once it exists.
+      if (window.quartoToggleColorScheme && !window.quartoToggleColorScheme.dynamicFaviconPatched) {
+        var quartoToggleColorScheme = window.quartoToggleColorScheme;
+
+        window.quartoToggleColorScheme = function () {
+          var result = quartoToggleColorScheme.apply(this, arguments);
+          updateDynamicFavicon();
+          return result;
+        };
+
+        window.quartoToggleColorScheme.dynamicFaviconPatched = true;
+        return true;
+      }
+
+      return false;
+    }
+
+    function watchQuartoTheme() {
+      if (document.body) {
+        new MutationObserver(updateDynamicFavicon).observe(document.body, {
+          attributes: true,
+          attributeFilter: ["class"]
+        });
+      }
+
+      document.querySelectorAll(".quarto-color-scheme-toggle").forEach(function (toggle) {
+        // The timeout lets Quarto finish changing classes/styles before we read state.
+        toggle.addEventListener("click", updateDynamicFavicon);
+      });
+
+      if (!patchQuartoToggle()) {
+        var attempts = 0;
+        var patchTimer = window.setInterval(function () {
+          attempts += 1;
+
+          if (patchQuartoToggle() || attempts > 20) {
+            window.clearInterval(patchTimer);
+          }
+        }, 50);
+      }
+    }
+
+    function removeCompetingFavicons() {
+      // Browsers often keep the first/last valid favicon, so leave one managed icon.
+      document.querySelectorAll('link[rel~="icon"]').forEach(function (icon) {
+        if (icon.dataset.dynamicFavicon !== "active") {
+          icon.parentNode.removeChild(icon);
+        }
+      });
+    }
+
+    removeCompetingFavicons();
+    setDynamicFavicon();
+
+    window.addEventListener("DOMContentLoaded", function () {
+      removeCompetingFavicons();
+      watchQuartoTheme();
+      setDynamicFavicon();
+    });
+
+    if (darkQuery.addEventListener) {
+      darkQuery.addEventListener("change", setDynamicFavicon);
+    } else {
+      darkQuery.addListener(setDynamicFavicon);
+    }
+  }());
+</script>
 <!--
 Hide cookie consent
 -->
@@ -1004,7 +1138,7 @@ PDF preview is not available on this device.
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- Updated: 2026-5
+ Updated: 2026-7
   </li>  
 </ul>
     </div>   
